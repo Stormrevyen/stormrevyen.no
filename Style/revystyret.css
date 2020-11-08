@@ -1,0 +1,27 @@
+#roller{ /* Definerer flexbox vertikalt og lager dermed linjer til hvert lederpar*/
+    display: flex;
+    flex-flow: column;
+}
+
+#roller div{ 
+    display: flex; /* Definerer flexbox hørisontalt og fordeler elementer i hver linje*/
+    width: 100%;
+}
+
+#roller > div:nth-child(odd){ /* Setter bakgrunnsfargen til annenhver linje til lysegrå.*/
+    background-color: rgba(0, 0, 0, .2);
+}
+
+
+#roller .rolletekst{
+    display: block; /* Samler all teksten hver rad til ett block element, blir enklere å håndtere i flexbox.*/
+    margin: 0 1vw;
+}
+
+#roller div img{
+    border-radius: 12px;
+    margin: auto 1vw;
+    justify-self: flex-end; /* Flytter bildene til høyre i raden.*/
+    height: 50%;
+    object-fit: cover;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/globalstyle.css">
+    <link rel="stylesheet" href="Style/meldDegPa.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script> <!--Kobler til js som inneholder flere ikoner-->
+    <link rel="icon" href="Media/Logo Stormrevyen mølle.svg">
+    <title>Meld deg på! | STORMREVYEN</title>
+</head>
+<body>
+    <div id="helesiden">
+        <!--Felles header for alle sider-->
+        <header id="header"><!--id="header" fordi id trengs når js bruker getElementById-->
+            <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
+            <a href="index.html" id="hovedtittel">STORMREVYEN</a>
+            <ul class="toppmeny">
+                <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
+                <li><a class="active" href="MeldDegPa.html">Meld deg på!</a></li>
+                <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
+                <li><a href="Revystyret.html">Revystyret</a></li>
+            </ul>
+        </header>
+
+        <!--Javascript, endrer headers bakgrunnsfarge når man scroller: Hvis toppen av siden er mer enn 600px over, endre bakgrunnsfarge på header.        -->
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+            if (document.documentElement.scrollTop > 10) { 
+                document.getElementById("header").style.backgroundColor = "#E98051";} 
+                else {document.getElementById("header").style.backgroundColor = "unset";}
+            }
+        </script>
+
+        <div class="content" id="pameldingStengt"><h1>Påmeldingen er stengt!</h1></div>
+
+        <div class="content">
+            <h2>Påmeldingen til Stormrevyen 2021 er stengt!</h2>
+            <h3>Se om du fikk plass på årets revy</h3>
+            <a href="https://docs.google.com/document/d/17udSwbo8qQrLtdrpb1C8LWtQZedPkvspuELDALZ_bVc/edit?fbclid=IwAR0VD37ZvPNXC_Njg9doPQXtiEe-1ysERN24YWCQuOxGcl86lUYlf4MoKjs" target="blank"><h1>Medlemsliste og generell info 2020 <i class='fas fa-arrow-right'></i></h1></a>
+            <h6>17. Oktober 2020 15:47  -   Anders Garberg</h6>
+        </div>
+
+        <div class="content">
+            <h2>Årets infovideo</h2>
+            <video src="Media/Stormrevyen 2021 INFO.mp4" controls></video>
+        </div>
+            
+
+        <div class="content">
+            <h2>Disse gruppene kan du melde deg på</h2>
+
+            <h3>Skuespillergruppa</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique perspiciatis quibusdam perferendis minus ipsa vero, explicabo tempora illum fugiat quae!</p>
+
+            <h3>Bandet</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam consequatur harum fuga ut eaque? Eius possimus dignissimos tempore eum est!</p>
+
+            <h3>Dansegruppa</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ullam omnis quibusdam ratione, architecto neque ex consectetur vero iste cupiditate?
+            </p>
+
+            <h3>Tekstgruppa</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis incidunt facilis, nisi atque iusto ea voluptatem hic odio exercitationem dolore.</p>
+
+            <h3>Lyd og Lys</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci maiores dolor, repellat officiis rerum quisquam iusto nemo consectetur mollitia voluptates.</p>
+
+            <h3>Sminke og kostyme</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae tenetur id labore deserunt voluptatem illo quaerat, iusto similique cum libero?</p>
+
+            <h3>PR-gruppa</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique neque, expedita vitae quidem officia odio optio sapiente voluptate magni numquam.</p>
+
+            <h3>Schtæmningsgruppa</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eveniet dolorum fugiat repudiandae repellendus. Exercitationem ullam aut at alias magni.</p>
+        </div>
+        
+
+    </div>
+
+    <footer> <!--Felles footer for alle sider-->
+        <div id="footer-main">  <!--Øvre del av footer, inneholder tre deler horisontalt-->
+            <div id="footer-left">
+                <ul class="linklist" id="footer-nav"> <!--Liste med linker til plasser på nettstedet-->
+                    <li><a href="#" title="Tilbake til toppen"> <i class='fas fa-arrow-up'></i>Tilbake til toppen</a></li> <!--Href:# for å komme på toppen av siden.-->
+                    <li><a  href="MeldDegPa.html">Meld deg på!</a></li>
+                    <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
+                    <li><a href="Revystyret.html">Revystyret</a></li>
+                </ul>
+
+            </div>
+            <div id="footer-mid">
+                <ul class="linklist" id="footer-links"> <!--Linker til diverse SoMe, javascript importert i head bruker classene under og setter inn ikoner. -->
+                    <li><a href="https://www.facebook.com/Stormrevyen2017/" title="Facebook/Stormrevyen" target="blank"> <i class='fab fa-facebook-square'></i>Stormrevyen</a></li>
+                    <li><a href="https://www.instagram.com/stormrevyen/" title="Instagram/Stormrevyen" target="blank"> <i class='fab fa-instagram'></i>Stormrevyen</a></li>
+                    <li><a href="mailto:stormrevyen@gmail.com" title="stormrevyen@gmail.com" target="blank"> stormrevyen@gmail.com </a></li>
+                </ul>
+            </div>
+            <div id="footer-right"><div id="footer-logo"><a href="index.html"><img src="media/Logo stormrevyen white_text.svg" alt="logo"></a></div></div>
+        </div>
+        <div id="byline">Laget av Anders Garberg <br> © 2020 <br> All rights reserved </div> <!--Nedre del av footer, copyright ol.-->
+    </footer>
+</body>
+</html>

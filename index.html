@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/globalstyle.css">
+    <link rel="stylesheet" href="Style/index.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script> <!--Kobler til js som inneholder flere ikoner-->
+    <link rel="icon" href="Media/Logo Stormrevyen mølle.svg">
+    <title>Hjem | STORMREVYEN</title>
+</head>
+<body>
+  
+
+    <div id="helesiden"> <!--Brukes til å gi hele siden (minus footer) bakgrunnsfarge-->
+        <div id="forside"> <!--Stor logo med tekst og knapp over header-->
+            <img src="Media/Logo stormrevyen white_text2021.png" alt="Stormrevyen 2021 logo">
+            <h3>Kultursenteret ISAK 6. - 9. April 2021</h2>
+            <a href="MeldDegPa.html"> Meld deg på! </a>
+            <div class="scroll-prompt" id="js_scrollPrompt"><div class="scroll-prompt-shape"></div></div>
+        </div>
+
+        <!--Felles header for alle sider-->
+        <header id="header"><!--id="header" fordi id trengs når js bruker getElementById-->
+            <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
+            <a href="index.html" id="hovedtittel">STORMREVYEN</a>
+            <ul class="toppmeny">
+                <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
+                <li><a href="MeldDegPa.html">Meld deg på!</a></li>
+                <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
+                <li><a href="Revystyret.html">Revystyret</a></li>
+            </ul>
+        </header>
+
+        <!--Javascript, endrer headers bakgrunnsfarge når man scroller: Hvis toppen av siden er mer enn 600px over, endre bakgrunnsfarge på header.        -->
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+              if (document.documentElement.scrollTop > 600) { 
+                document.getElementById("header").style.backgroundColor = "#E98051";} 
+                else {document.getElementById("header").style.backgroundColor = "unset";}
+            }
+        </script>
+
+        <!--En slags feed med "opptateringer" fra styret:-->
+        <div class="content">
+            <!--Tittel--><h2>Medlemslistan e ut!</h2> 
+            <!--Undertittel--><h3>Se om du fikk plass på årets revy</h3>
+            <!--Stor link--><a href="https://docs.google.com/document/d/17udSwbo8qQrLtdrpb1C8LWtQZedPkvspuELDALZ_bVc/edit?fbclid=IwAR0VD37ZvPNXC_Njg9doPQXtiEe-1ysERN24YWCQuOxGcl86lUYlf4MoKjs" target="blank"><h1>Medlemsliste og generell info 2020 <i class='fas fa-arrow-right'></i></h1></a>
+            <!--Dato og forfatter av innlegget--><h6>17. Oktober 2020 15:47  -   Anders Garberg</h6>
+        </div>
+
+        <div class="content">
+            <h2>Påmeldinga er nå lukket</h2>
+            <h3>Takk til alle som meldte seg på!</h3>
+            <h6>10. Oktober 2020 10:13  -   Anders Garberg</h6>
+        </div>
+
+        <div class="content"> 
+            <h2>Påmeldinga er åpen!</h2>
+            <a href="MeldDegPa.html"><h1>Info om påmelding <i class='fas fa-arrow-right'></i></h1></a> 
+            <h6>5. Oktober 2020 08:07  -   Anders Garberg</h6>
+        </div>
+    
+        <div class="content">
+            <h2>Årets promovideo</h2>
+            <video src="media/Stormrevyen 2021 PROMO.mp4#t=10.7" controls></video>
+            <h6>2. Oktober 2020 22:13   -   Anders Garberg</h6>
+        </div>
+
+    </div> 
+
+    <footer> <!--Felles footer for alle sider-->
+        <div id="footer-main">  <!--Øvre del av footer, inneholder tre deler horisontalt-->
+            <div id="footer-left">
+                <ul class="linklist" id="footer-nav"> <!--Liste med linker til plasser på nettstedet-->
+                    <li><a href="#" title="Tilbake til toppen"> <i class='fas fa-arrow-up'></i>Tilbake til toppen</a></li> <!--Href:# for å komme på toppen av siden.-->
+                    <li><a  href="MeldDegPa.html">Meld deg på!</a></li>
+                    <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
+                    <li><a href="Revystyret.html">Revystyret</a></li>
+                </ul>
+
+            </div>
+            <div id="footer-mid">
+                <ul class="linklist" id="footer-links"> <!--Linker til diverse SoMe, javascript importert i head bruker classene under og setter inn ikoner. -->
+                    <li><a href="https://www.facebook.com/Stormrevyen2017/" title="Facebook/Stormrevyen" target="blank"> <i class='fab fa-facebook-square'></i>Stormrevyen</a></li>
+                    <li><a href="https://www.instagram.com/stormrevyen/" title="Instagram/Stormrevyen" target="blank"> <i class='fab fa-instagram'></i>Stormrevyen</a></li>
+                    <li><a href="mailto:stormrevyen@gmail.com" title="stormrevyen@gmail.com" target="blank"> stormrevyen@gmail.com </a></li>
+                </ul>
+            </div>
+            <div id="footer-right"><div id="footer-logo"><a href="index.html"><img src="media/Logo stormrevyen white_text.svg" alt="logo"></a></div></div>
+        </div>
+        <div id="byline">Laget av Anders Garberg <br> © 2020 <br> All rights reserved </div> <!--Nedre del av footer, copyright ol.-->
+    </footer>
+</body>
+</html>

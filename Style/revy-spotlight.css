@@ -1,0 +1,71 @@
+/* Definerer fargekombinasjonen til logoen fra hver revy som variabler*/
+#SR2021{
+    --color1: white;/* --color1 = Bakgrunnsfarge */
+    --color2: black; /* --color2 = Forgrunnsfagre */
+}
+
+#Abort-mission{
+    --color1: #A7CFE8;
+    --color2: #BF3D30;
+}
+
+#Throwback{
+    --color1: #FD6502;
+    --color2: #D2E3DE;
+}
+
+#Shitstorm{
+    --color1: #FBB553;
+    --color2: #153C41;
+}
+
+#I-vinden{
+    --color1: #93DDDE;
+    --color2: #FF3A0E;
+}
+
+header{
+    background-color: #E98051; /*Setter bakgrunnsfargen til header til en bestemt verdi. Skal være orange fra starten av, ikke fade inn som på de andre sidene.*/
+}
+.revy-spotlight{
+    background-color: var(--color1); /* Bruker variabler definert øverst til å bestemme farger.*/
+    color: var(--color2);
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    padding: 0 0 2vw 0;
+    z-index: auto;
+
+}
+
+.revyBanner{/*Danner øverste del av siden under header, revylogo sentrert på midten som blander inn med resten av siden. > */
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.revyBanner img{width: 30%} /* < */
+
+.youtubeWindow{ /* Bygger inn og stilerer video fra Youtube >*/
+    width: 80%;
+    height: 50vh;
+    margin: auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.youtubeWindow iframe{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* < */
+}
+
+.revy-spotlight .content h2{ /* Bestemmer nye farger til overskriften i content-diver*/
+    color: var(--color2); /* Bruker variabler definert øverst til å bestemme farger.*/
+    border-bottom: var(--color2) 2px solid;
+}
+
+.revy-spotlight#Throwback .content h2{ /*Endrer Throwback til farge 1 da Throwback sin farge 2 er for lys til hvit bakgrunn.*/
+    color: var(--color1);
+    border-bottom: var(--color1) 2px solid;
+}

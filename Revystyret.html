@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/globalstyle.css">
+    <link rel="stylesheet" href="Style/revystyret.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script> <!--Kobler til js som inneholder flere ikoner-->
+    <link rel="icon" href="Media/Logo Stormrevyen mølle.svg">
+    <title>Styret | STORMREVYEN</title>
+</head>
+<body>
+    <div id="helesiden">
+    <!--Felles header for alle sider-->
+    <header id="header"><!--id="header" fordi id trengs når js bruker getElementById-->
+        <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
+        <a href="index.html" id="hovedtittel">STORMREVYEN</a>
+        <ul class="toppmeny">
+            <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
+            <li><a href="MeldDegPa.html">Meld deg på!</a></li>
+            <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
+            <li><a class="active" href="Revystyret.html">Revystyret</a></li>
+        </ul>
+    </header>
+
+    <!--Javascript, endrer headers bakgrunnsfarge når man scroller: Hvis toppen av siden er mer enn 600px over, endre bakgrunnsfarge på header.        -->
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+        if (document.documentElement.scrollTop > 10) { 
+            document.getElementById("header").style.backgroundColor = "#E98051";} 
+            else {document.getElementById("header").style.backgroundColor = "unset";}
+        }
+    </script>
+
+        <div class="imgContent">
+            <img id="bildeStyret" src="media/Styret.jpg" alt="Styret i stormrevyen">
+        </div>
+
+        <div class="content" id="styret">
+            <h2>Styret i stormrevyen</h2>
+            <p>Styret er de desidert kuleste i revyen, det er nettopp de som bestemmer.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aperiam omnis a impedit nisi? Saepe cum eos veritatis, odio quis nam sunt, dignissimos hic laborum labore architecto quaerat fugit, quibusdam cumque pariatur eum sint asperiores quo sit reiciendis a. Praesentium aperiam dolores rem id numquam deserunt, ratione minus porro. Aliquam?
+            </p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, id ut aspernatur nulla maxime tempora! Ipsum temporibus maiores quisquam eius architecto, odio blanditiis quia quasi adipisci veritatis atque porro tenetur velit voluptates, obcaecati corporis! Perspiciatis facere omnis quibusdam esse nam ad dolores, iusto deserunt. Nobis nostrum voluptas quos rem iusto enim dolorem sit odit perspiciatis ratione, inventore rerum omnis eveniet numquam expedita! Inventore quas delectus, eveniet cum cupiditate dolor sint soluta hic praesentium nam tempora mollitia eum! Alias deserunt, maiores fugiat dolores aperiam dolore vero animi veniam illum vitae cupiditate, facere quis minus odio nesciunt quasi, ab officia reprehenderit dolor ipsam ut aliquam? Qui velit, laudantium, exercitationem debitis suscipit necessitatibus sunt ratione repellat eligendi placeat nesciunt nihil temporibus aspernatur quis quae, obcaecati voluptates corrupti nulla unde minus natus odio! Architecto fuga alias fugiat velit temporibus ab veritatis accusantium vel commodi est at laudantium eveniet, modi fugit saepe eum? Temporibus alias ipsum eveniet error explicabo est nihil voluptatibus pariatur! Nemo, expedita molestias natus explicabo suscipit ratione eius. Fugiat corporis dignissimos incidunt numquam quidem beatae impedit, aperiam labore deserunt! Eos sed magnam atque quia doloremque dolore ipsum harum! Non vitae, sed eos minima dicta fugiat perspiciatis harum temporibus eaque eligendi, obcaecati quidem.</p>
+
+        </div>
+
+        <div class="content" id="roller">
+            <h2>Rollene i styret</h2>
+
+            <div class="gray">
+                <div class="rolletekst">
+                    <h3>Lotta og Rebekka</h3>
+                    <p>Meget kule <a href="#">revysjefer.</a> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum expedita fugit, sunt qui atque enim voluptate illum iste dolores voluptatibus!</p>
+                </div>
+                <img src="media/lotta.jpg" alt="Lotta">
+                <img src="media/rebekka.jpg" alt="Rebekka">
+            </div>
+
+            <div>
+                <div class="rolletekst">
+                    <h3>Emma og Henrikke</h3>
+                    <p> <a href="MeldDegPa.html#Skuespillerne">Skuespill</a> gang gang Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab eveniet est minima. Nulla, cupiditate quod! Impedit vel adipisci eius fugit.</p>
+                </div>
+                <img src="media/emmaR.jpg" alt="Emma R">
+                <img src="media/henrikke.jpg" alt="Henrikke">
+            </div>
+
+            <div>
+                <div class="rolletekst">
+                    <h3>Oskar og Anders</h3>
+                    <p>Anders og Oskar er sjefene over det mest utrolige <a href="MeldDegPa.html#Bandet">bandet</a> blant hele trondheim by. Gutta har i år samla sammen de mest musikalsk begavede på skolen og er klar for å ta revyen med storm!</p>
+                </div>
+                <img src="media/oskar.jpg" alt="Oskar">
+                <img src="media/anders.jpg" alt="Anders">
+            </div>
+
+            <div>
+                <div class="rolletekst">
+                    <h3>Tora og Angelica</h3>
+                    <p>Tora og Angelica har ansvar for alt innenfor <a href="MeldDegPa.html#Dansegruppa">dans</a> og liknende. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nisi neque magni alias in fuga eaque, vitae odit quibusdam dolorem.</p>
+                </div>
+                <img src="media/tora.jpg" alt="Tora">
+                <img src="media/angelica.jpg" alt="Angelica">
+            </div>
+
+            <div>
+                <div class="rolletekst">
+                    <h3>Emma og Ingrid</h3>
+                    <p>Å skrive revy og greier er veldig viktig, derfor har disse to ansvar for <a href="MeldDegPa.html#Tekstgruppa">tekstgruppa</a>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores officiis expedita at minima similique nemo sint unde ea iure sit?</p>
+                </div>
+                <img src="media/emmaU.jpg" alt="Emma U">
+                <img src="media/ingrid.jpg" alt="Ingrid">
+            </div>
+
+            <div>
+                <div class="rolletekst">
+                    <h3>Petter</h3>
+                    <p>Petter er sjef for alt innenfor <a href="MeldDegPa.html#LydOgLys">Lyd og Lys</a>. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, voluptatem unde! Nam dolor enim, inventore modi vero maiores consequatur aliquam.</p>
+                </div>
+                <img src="media/petter.jpg" alt="Petter">
+            </div>
+
+            <div>
+                <div class="rolletekst">
+                    <h3>Fatima</h3>
+                    <p>Mekker fancy <a href="MeldDegPa.html#kostyme">sminke og kostyme</a> og greier. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis impedit ipsum quis illo ipsam nostrum et soluta molestiae ab porro.</p>
+                </div>
+                <img src="media/fatima.jpg" alt="Fatima">
+            </div>
+
+            <div>
+                <div class="rolletekst">
+                    <h3>Hans</h3>
+                    <p>Hans promoterer byens beste revy og er sjef for alt innenfor <a href="MeldDegPa.html#PR">PR</a>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam totam quam, repellendus velit explicabo vitae? Mollitia quaerat consequatur alias ducimus?</p>
+                </div>
+                <img src="media/hans.jpg" alt="Hans">
+            </div>
+
+            <div>
+                <div class="rolletekst">
+                    <h3>Johnny</h3>
+                    <p>Mekker EBIGGGG <a href="MeldDegPa.html#schtaemning">schtæmning</a>, Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quae ex facere pariatur totam, dolorem quos consequuntur similique quibusdam ab.</p>
+                </div>
+                <img src="media/oskar.jpg" alt="Oskar">
+            </div>
+
+            <div>
+                <div class="rolletekst">
+                    <h3>Andreas</h3>
+                    <p>Fikser flus og <a href="#">økonomi</a> og greier. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati soluta dolore sint amet perferendis facere nisi eos dolorum repudiandae quos?</p>
+                </div>
+                <img src="media/andreas.jpg" alt="Andreas">
+            </div>
+
+            <div>
+                <div class="rolletekst">
+                    <h3>Eline</h3>
+                    <p><a href="#">Inspisient</a>, passer på backstage ogsånn. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minus at, nobis excepturi deserunt id ipsa. Nihil beatae fuga odio.</p>
+                </div>
+                <img src="media/oskar.jpg" alt="Oskar">
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer> <!--Felles footer for alle sider-->
+        <div id="footer-main">  <!--Øvre del av footer, inneholder tre deler horisontalt-->
+            <div id="footer-left">
+                <ul class="linklist" id="footer-nav"> <!--Liste med linker til plasser på nettstedet-->
+                    <li><a href="#" title="Tilbake til toppen"> <i class='fas fa-arrow-up'></i>Tilbake til toppen</a></li> <!--Href:# for å komme på toppen av siden.-->
+                    <li><a  href="MeldDegPa.html">Meld deg på!</a></li>
+                    <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
+                    <li><a href="Revystyret.html">Revystyret</a></li>
+                </ul>
+
+            </div>
+            <div id="footer-mid">
+                <ul class="linklist" id="footer-links"> <!--Linker til diverse SoMe, javascript importert i head bruker classene under og setter inn ikoner. -->
+                    <li><a href="https://www.facebook.com/Stormrevyen2017/" title="Facebook/Stormrevyen" target="blank"> <i class='fab fa-facebook-square'></i>Stormrevyen</a></li>
+                    <li><a href="https://www.instagram.com/stormrevyen/" title="Instagram/Stormrevyen" target="blank"> <i class='fab fa-instagram'></i>Stormrevyen</a></li>
+                    <li><a href="mailto:stormrevyen@gmail.com" title="stormrevyen@gmail.com" target="blank"> stormrevyen@gmail.com </a></li>
+                </ul>
+            </div>
+            <div id="footer-right"><div id="footer-logo"><a href="index.html"><img src="media/Logo stormrevyen white_text.svg" alt="logo"></a></div></div>
+        </div>
+        <div id="byline">Laget av Anders Garberg <br> © 2020 <br> All rights reserved </div> <!--Nedre del av footer, copyright ol.-->
+    </footer>
+</body>
+</html>
