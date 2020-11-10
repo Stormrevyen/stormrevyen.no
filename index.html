@@ -14,9 +14,9 @@
 
     <div id="helesiden"> <!--Brukes til å gi hele siden (minus footer) bakgrunnsfarge-->
         <div id="forside"> <!--Stor logo med tekst og knapp over header-->
-            <img src="Media/Logo stormrevyen white_text2021.png" alt="Stormrevyen 2021 logo">
-            <h3>Kultursenteret ISAK 6. - 9. April 2021</h2>
-            <a href="MeldDegPa.html"> Meld deg på! </a>
+            <div id="forside-img"><img src="Media/Logo stormrevyen white_text2021.png" alt="Stormrevyen 2021 logo"></div>
+            <div><h3>Kultursenteret ISAK 6. - 9. April 2021</h3></div>
+            <div><a href="MeldDegPa.html"> Meld deg på!</a></div>
             <div class="scroll-prompt" id="js_scrollPrompt"><div class="scroll-prompt-shape"></div></div>
         </div>
 
@@ -36,7 +36,7 @@
         <script>
             window.onscroll = function() {scrollFunction()};
             function scrollFunction() {
-              if (document.documentElement.scrollTop > 600) { 
+              if (document.documentElement.scrollTop > window.innerHeight) { 
                 document.getElementById("header").style.backgroundColor = "#E98051";} 
                 else {document.getElementById("header").style.backgroundColor = "unset";}
             }
