@@ -7,6 +7,7 @@
     flex-flow: column;
     align-items: center;
     border-bottom: 6px solid #F7D15A;
+    height: 99.5vh;
 }
 
 #forside img{width: 100%;}
@@ -17,7 +18,7 @@
     font-weight: 800;
     color: white;
     font-size: 2.5vw;
-    margin-top: -7.5%;
+    margin-top: -20vh;
     margin-bottom: 8vh;
 }
 
@@ -32,7 +33,6 @@
     border-bottom: 3px solid #F7D15A;
     text-decoration: none;
     border-radius: 12px;
-    margin-bottom: 2vw;
 }
 
 #forside a:hover { /* Endrer knappens farger ved hover.*/
