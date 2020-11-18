@@ -22,6 +22,6 @@
     border-radius: 12px;
     margin: auto 1vw;
     justify-self: flex-end; /* Flytter bildene til høyre i raden.*/
-    height: 50%;
+    height: 10vw;
     object-fit: cover;
 }

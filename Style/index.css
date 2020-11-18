@@ -3,22 +3,19 @@
 @import "compass/css3";
 
 #forside {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    border-bottom: 6px solid #F7D15A;
+    display: grid;
+    grid-template-rows: 60vh 20vh 20vh;
+    border-bottom: 1vh solid #F7D15A;
+    height: 99.5vh;
+    text-align: center;
 }
 
 #forside img{width: 100%;}
-
 
 #forside h3 {
     font-family: acumin-pro-wide,sans-serif;
     font-weight: 800;
     color: white;
-    font-size: 2.5vw;
-    margin-top: -7.5%;
-    margin-bottom: 8vh;
 }
 
 #forside a {
@@ -32,7 +29,6 @@
     border-bottom: 3px solid #F7D15A;
     text-decoration: none;
     border-radius: 12px;
-    margin-bottom: 2vw;
 }
 
 #forside a:hover { /* Endrer knappens farger ved hover.*/

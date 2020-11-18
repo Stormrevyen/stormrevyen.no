@@ -135,6 +135,7 @@ h2{
     margin: 0;
     font-family: acumin-pro, sans-serif;
     font-weight: 800;
+    font-size: 1.4em;
 }
 .content h2{
     padding: 0 1vw;
@@ -146,7 +147,7 @@ h3{
     margin: 0;
     font-family: acumin-pro-condensed,sans-serif;
     font-weight: 800;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 
 .content h3{
@@ -157,8 +158,7 @@ h3{
 h4{
     margin: 0;
     font-family: acumin-pro-condensed,sans-serif;
-    font-weight: 400;
-    font-size: 1.2em;
+    font-weight: 400;;
 }
 
 .content h4, .content a{
@@ -182,6 +182,7 @@ h6{
     margin: 0;
     font-family: acumin-pro-condensed,sans-serif;
     font-weight: 200;
+    font-size: 0.7em;
 }
 
 .content h6{
