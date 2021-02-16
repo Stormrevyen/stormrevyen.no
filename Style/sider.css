@@ -1,0 +1,223 @@
+@charset "UTF-8";
+/* Definerer fargekombinasjonen til logoen fra hver revy som variabler, brukt i hver av spotlight-sidene
+    og TidligereRevyer.html */
+#SR2021 {
+  --color1: white;
+  /* --color1 = Bakgrunnsfarge */
+  --color2: black;
+  /* --color2 = Forgrunnsfagre */
+}
+
+#Abort-mission {
+  --color1: #A7CFE8;
+  --color2: #BF3D30;
+}
+
+#Throwback {
+  --color1: #FD6502;
+  --color2: #D2E3DE;
+}
+
+#Shitstorm {
+  --color1: #FBB553;
+  --color2: #153C41;
+}
+
+#I-vinden {
+  --color1: #93DDDE;
+  --color2: #FF3A0E;
+}
+
+/*      /TidligereRevyer.html:   */
+#revyoversikt {
+  /* Definerer en flexbox der elementene kan flyte og fordele seg fritt. */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+}
+
+.revyItem {
+  text-align: center;
+  width: 400px;
+  margin: 2vw auto;
+  border-radius: 12px;
+  margin-bottom: 1vh;
+  -webkit-box-shadow: 8px 14px 38px rgba(0, 0, 0, 0.596);
+          box-shadow: 8px 14px 38px rgba(0, 0, 0, 0.596);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  /* Gjør animasjonen rolig på vei tilbake*/
+  z-index: 1;
+  /* Plasserer foran bakgrunn men bak header.*/
+  background-color: var(--color1);
+  /* Bruker variabler definert nederst til å bestemme farger.*/
+  color: var(--color2);
+  /* Gjør knappen over div-elementet synlig ved hover over div-element. */
+}
+
+.revyItem:hover {
+  -webkit-transform: translate3D(0, -1px, 0) scale(1.03);
+          transform: translate3D(0, -1px, 0) scale(1.03);
+  /* Beveger elementet litt opp og zoomer inn */
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  /* Gjør animasjonen rolig */
+}
+
+.revyItem h2 {
+  font-size: 2em;
+  margin: 0 0 1vw 0;
+}
+
+.revyItem:hover .revyButton {
+  opacity: 1;
+}
+
+.revyButton {
+  display: block;
+  /* Plasserer knappen i midten av div element, over bildet. > */
+  position: relative;
+  top: -300px;
+  /* < */
+  z-index: 4;
+  width: 30%;
+  margin: auto;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background-color: var(--color2);
+  /* Bruker variabler definert nederst til å bestemme farger.*/
+  color: var(--color1);
+  border-bottom: 3px solid var(--color1);
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: 8px 14px 38px rgba(0, 0, 0, 0.596);
+          box-shadow: 8px 14px 38px rgba(0, 0, 0, 0.596);
+  opacity: 0;
+  /* Skjult frem til hover */
+}
+
+.revyButton:hover {
+  /* Endrer knappens farger ved hover, bruker variabler definert nederst til å bestemme farger.*/
+  background-color: var(--color1);
+  color: var(--color2);
+  border-bottom: 3px solid var(--color2);
+}
+
+.revyicon {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+/*      abort-mission.html, i-vinden.html, shitstorm.html, throwback.html:  */
+header.orange {
+  background-color: #E98051;
+  /*Setter bakgrunnsfargen til header til en bestemt verdi. Skal være orange fra starten av, ikke fade inn som på de andre sidene.*/
+}
+
+.revy-spotlight {
+  background-color: var(--color1);
+  /* Bruker variabler definert øverst til å bestemme farger.*/
+  color: var(--color2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 100%;
+  padding: 0 0 2vw 0;
+  z-index: auto;
+}
+
+.revy-spotlight .content h2 {
+  /* Bestemmer nye farger til overskriften i content-diver*/
+  color: var(--color2);
+  /* Bruker variabler definert øverst til å bestemme farger.*/
+  border-bottom: var(--color2) 2px solid;
+}
+
+.revy-spotlight#Throwback .content h2 {
+  /*Endrer Throwback til farge 1 da Throwback sin farge 2 er for lys til hvit bakgrunn.*/
+  color: var(--color1);
+  border-bottom: var(--color1) 2px solid;
+}
+
+.revyBanner {
+  /*Danner øverste del av siden under header, revylogo sentrert på midten som blander inn med resten av siden. > */
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.revyBanner img {
+  width: 30%;
+}
+
+.youtubeWindow {
+  /* Bygger inn og stilerer video fra Youtube >*/
+  width: 80%;
+  height: 50vh;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.youtubeWindow iframe {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*      /meldDegPa.html:    */
+#pameldingStengt {
+  text-align: center;
+  font-size: 1.5em;
+  color: #CA3F44;
+}
+
+/*      /revystyret.html:   */
+#roller {
+  /* Definerer flexbox vertikalt og lager dermed linjer til hvert lederpar*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+#roller div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Definerer flexbox hørisontalt og fordeler elementer i hver linje*/
+  width: 100%;
+}
+
+#roller div img {
+  border-radius: 12px;
+  margin: auto 1vw;
+  justify-self: flex-end;
+  /* Flytter bildene til høyre i raden.*/
+  height: 10vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#roller > div:nth-child(odd) {
+  /* Setter bakgrunnsfargen til annenhver linje til lysegrå.*/
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#roller .rolletekst {
+  display: block;
+  /* Samler all teksten hver rad til ett block element, blir enklere å håndtere i flexbox.*/
+  margin: 0 1vw;
+}
+/*# sourceMappingURL=sider.css.map */
