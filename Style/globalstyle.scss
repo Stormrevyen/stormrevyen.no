@@ -38,9 +38,6 @@ header {
         border-radius: 12px;
     } 
 }
-@media screen and (max-width: 900px){ /* Gjør headerens høyde automatisk hvis viewports bredde er under 900px. */
-    header{height: auto}
-}
 
 #hovedlogo {
     margin-top: -25px;
@@ -100,6 +97,17 @@ header {
         }
     }
 }
+
+@media screen and (max-width: 900px) {
+    .toppmeny li a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    /*.header-right {
+      float: none;
+    }*/
+  }
 
 /*  - Content -  */
 

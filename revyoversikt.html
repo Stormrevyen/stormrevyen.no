@@ -7,15 +7,12 @@
     <link rel="stylesheet" href="Style/sider.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script> <!--Kobler til js som inneholder flere ikoner-->
     <link rel="icon" href="Media/Logo Stormrevyen mølle.svg">
-    <title>Abort Mission 2020 | STORMREVYEN</title>
+    <title>Revyoversikt | STORMREVYEN</title>
 </head>
 <body>
-    
-    
-    
-    <div class="revy-spotlight" id="Abort-mission">
+    <div id="helesiden">
         <!--Felles header for alle sider-->
-        <header id="header" class="orange"><!--id="header" fordi id trengs når js bruker getElementById-->
+        <header id="header"><!--id="header" fordi id trengs når js bruker getElementById-->
             <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
             <a href="index.html" id="hovedtittel">STORMREVYEN</a>
             <ul class="toppmeny">
@@ -26,19 +23,57 @@
             </ul>
         </header>
 
-        <div class="revyBanner">
-            <img src="Media/Abort-Mission.jpg" alt="Abort Mission">
+        <!--Javascript, endrer headers bakgrunnsfarge når man scroller: Hvis toppen av siden er mer enn 600px over, endre bakgrunnsfarge på header.        -->
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+              if (document.documentElement.scrollTop > 10) { 
+                document.getElementById("header").style.backgroundColor = "#E98051";} 
+                else {document.getElementById("header").style.backgroundColor = "unset";}
+            }
+        </script>
+
+        <!--TODO Legg til "Tilbake til oversikt" knapp. -->
+
+        <div id="revyoversikt">
+            <div class="revyItem" id="SR2021">
+                <h2>2021</h2>
+                <img src="Media/SR2021.jpg" alt="SR2021" class="revyicon">
+                <p>Årets revy står for dør. Nå kan også du bli med og skape tidenes stormrevy!</p>
+                <a href="MeldDegPa.html" class="revyButton"><h3>Meld deg på!</h3></a>
+            </div>
+
+            <div class="revyItem" id="Abort-mission">
+                <h2>2020</h2>
+                <img src="Media/Abort-Mission.jpg" alt="Abort-Mission" class="revyicon">
+                <p>Stormrevyen 2020 - Abort Mission ble desverre avlyst på grunn av de strenge smittevernstiltakene. Dette var veldig trist da revymedlemmene hadde brukt oppmot et halvt år på å skape revyen. </p>
+                <a href="abort-mission.html" class="revyButton"><h3>Se mer</h3></a>
+            </div>
+
+            <div class="revyItem" id="Throwback"> 
+                <h2>2019</h2>
+                <img src="Media/Throwback.jpg" alt="Throwback" class="revyicon">
+                <p>"Throwback" var 2019-utgaven av stormrevyen med det så langt største engasjementet blandt både deltakere og publikum.</p>
+                <a href="throwback.html" class="revyButton"><h3>Se mer</h3></a>
+            </div>
+
+            <div class="revyItem" id="Shitstorm"> 
+                <h2>2018</h2>
+                <img src="Media/Shitstorm.jpg" alt="Shitstorm" class="revyicon">
+                <p>"Shitstorm" er den andre revyen i årrekka, og blei en virkelig "god nummer to"</p>
+                <a href="shitstorm.html" class="revyButton"><h3>Se mer</h3></a>
+            </div>
+
+            <div class="revyItem" id="I-vinden"> 
+                <h2>2017</h2>
+                <img src="Media/Ivinden.jpg" alt="I-vinden" class="revyicon">
+                <p>Tidenes første stormrevy tok sted i 2017. "I vinden" er grunnleggeren for en rekke enestående forestillinger. </p>
+                <a href="i-vinden.html" class="revyButton"><h3>Se mer</h3></a>
+            </div>
         </div>
 
-        <div class="content">
-            <h2>Abort Mission AVLYST</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore exercitationem provident quibusdam quasi cum molestias illum reprehenderit molestiae doloremque, voluptas rerum, quisquam error in iste suscipit, dignissimos maiores asperiores quae magni sequi natus cupiditate aliquam corporis nam! Nemo praesentium, laudantium magnam temporibus iste voluptates officia, incidunt unde dolorum asperiores ea provident necessitatibus obcaecati excepturi similique quia odit dignissimos suscipit optio. Itaque magni iusto eius aspernatur rerum maxime saepe odit, modi sit alias necessitatibus debitis expedita veritatis. Architecto doloremque vitae ut accusamus earum rerum numquam omnis alias, labore sapiente, nobis recusandae dolorem quas quibusdam assumenda! Delectus in obcaecati non cumque alias.</p>
-
-        </div>
-    
     </div>
 
-    
     <footer> <!--Felles footer for alle sider-->
         <div id="footer-main">  <!--Øvre del av footer, inneholder tre deler horisontalt-->
             <div id="footer-left">
