@@ -1,34 +1,34 @@
 @charset "UTF-8";
 /* Definerer fargekombinasjonen til logoen fra hver revy som variabler, brukt i hver av spotlight-sidene
     og TidligereRevyer.html */
-#SR2021 {
-  --color1: white;
+#Skjegget-i-postkassa {
+  --color1: #392e88;
   /* --color1 = Bakgrunnsfarge */
-  --color2: black;
+  --color2: #fec102;
   /* --color2 = Forgrunnsfagre */
 }
 
 #Abort-mission {
-  --color1: #A7CFE8;
-  --color2: #BF3D30;
+  --color1: #a7cfe8;
+  --color2: #bf3d30;
 }
 
 #Throwback {
-  --color1: #FD6502;
-  --color2: #D2E3DE;
+  --color1: #fd6502;
+  --color2: #d2e3de;
 }
 
 #Shitstorm {
-  --color1: #FBB553;
-  --color2: #153C41;
+  --color1: #fbb553;
+  --color2: #153c41;
 }
 
 #I-vinden {
-  --color1: #93DDDE;
-  --color2: #FF3A0E;
+  --color1: #93ddde;
+  --color2: #ff3a0e;
 }
 
-/*      /TidligereRevyer.html:   */
+/*      /revyoversikt.html:   */
 #revyoversikt {
   /* Definerer en flexbox der elementene kan flyte og fordele seg fritt. */
   display: -webkit-box;
@@ -46,8 +46,8 @@
   margin-bottom: 1vh;
   -webkit-box-shadow: 8px 14px 38px rgba(0, 0, 0, 0.596);
           box-shadow: 8px 14px 38px rgba(0, 0, 0, 0.596);
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   /* Gjør animasjonen rolig på vei tilbake*/
   z-index: 1;
   /* Plasserer foran bakgrunn men bak header.*/
@@ -61,8 +61,8 @@
   -webkit-transform: translate3D(0, -1px, 0) scale(1.03);
           transform: translate3D(0, -1px, 0) scale(1.03);
   /* Beveger elementet litt opp og zoomer inn */
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   /* Gjør animasjonen rolig */
 }
 
@@ -113,7 +113,7 @@
 
 /*      abort-mission.html, i-vinden.html, shitstorm.html, throwback.html:  */
 header.orange {
-  background-color: #E98051;
+  background-color: #e98051;
   /*Setter bakgrunnsfargen til header til en bestemt verdi. Skal være orange fra starten av, ikke fade inn som på de andre sidene.*/
 }
 
@@ -177,7 +177,7 @@ header.orange {
 #pameldingStengt {
   text-align: center;
   font-size: 1.5em;
-  color: #CA3F44;
+  color: #ca3f44;
 }
 
 /*      /revystyret.html:   */

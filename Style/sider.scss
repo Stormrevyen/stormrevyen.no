@@ -1,8 +1,8 @@
 /* Definerer fargekombinasjonen til logoen fra hver revy som variabler, brukt i hver av spotlight-sidene
     og TidligereRevyer.html */
 #Skjegget-i-postkassa {
-  --color1: white; /* --color1 = Bakgrunnsfarge */
-  --color2: black; /* --color2 = Forgrunnsfagre */
+  --color1: #392e88; /* --color1 = Bakgrunnsfarge */
+  --color2: #fec102; /* --color2 = Forgrunnsfagre */
 }
 
 #Abort-mission {
@@ -25,7 +25,7 @@
   --color2: #ff3a0e;
 }
 
-/*      /TidligereRevyer.html:   */
+/*      /revyoversikt.html:   */
 #revyoversikt {
   /* Definerer en flexbox der elementene kan flyte og fordele seg fritt. */
   display: flex;
@@ -57,6 +57,8 @@
     opacity: 1;
   } /* Gjør knappen over div-elementet synlig ved hover over div-element. */
 }
+
+//TODO Gjør at alle knappene er plasert likt på boksene. Nå har de forskjellig høyde.
 
 .revyButton {
   display: block; /* Plasserer knappen i midten av div element, over bildet. > */
