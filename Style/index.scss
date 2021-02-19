@@ -1,90 +1,135 @@
 @import url("https://use.typekit.net/nvi4ogw.css");
-@import url('compass/css3.css');
+@import url("compass/css3.css");
 
 #forside {
-    display: grid;
-    grid-template-rows: 60vh 20vh 20vh;
-    border-bottom: 1vh solid #F7D15A;
-    height: 99.5vh;
+  display: grid;
+  grid-template-rows: 60vh 20vh 20vh;
+  border-bottom: 1vh solid #f7d15a;
+  height: 99.5vh;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+  h3 {
+    font-family: acumin-pro-wide, sans-serif;
+    font-weight: 800;
+    color: white;
+  }
+  a {
+    font-family: acumin-pro-condensed, sans-serif;
+    font-weight: 600;
+    font-size: 2vw;
     text-align: center;
-    img{width: 100%;}
-    h3 {
-        font-family: acumin-pro-wide,sans-serif;
-        font-weight: 800;
-        color: white;
+    padding: 14px 18px;
+    color: white;
+    background-color: #47c2a9;
+    border-bottom: 3px solid #f7d15a;
+    text-decoration: none;
+    border-radius: 12px;
+    &:hover {
+      /* Endrer knappens farger ved hover.*/
+      background-color: #f7d15a;
+      border-bottom: 3px solid #47c2a9;
+      color: black;
     }
-    a {
-        font-family: acumin-pro-condensed,sans-serif;
-        font-weight: 600;
-        font-size: 2vw;
-        text-align: center;
-        padding: 14px 18px;
-        color: white;
-        background-color: #47C2A9; 
-        border-bottom: 3px solid #F7D15A;
-        text-decoration: none;
-        border-radius: 12px;
-        &:hover { /* Endrer knappens farger ved hover.*/
-            background-color: #F7D15A; 
-            border-bottom: 3px solid #47C2A9;
-            color: black;
-        }
-    }
+  }
+}
 
+#mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000070;
+  z-index: 10;
+  visibility: hidden;
+  #mobilePopup {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 30px 20px;
+    width: 350px;
+    height: 250px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.623);
+    visibility: hidden;
+    z-index: 11;
+    h3 {
+      border-bottom: #47c2a9 2px solid;
+    }
+    img {
+      width: 30%;
+      margin: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #mobileOverlay {
+    visibility: visible;
+    #mobilePopup {
+      visibility: visible;
+    }
+  }
 }
 
 /* Pilanimasjon til høyre: */
 .scroll-prompt {
-    position: absolute; /* Plasserer nederst til høyre > */
-    bottom: 15%;
-    left: 95%; /* < */
-    -webkit-transition: opacity 1s ease-out; /* Gjør animasjonen rolig */
-    transition: opacity 1s ease-out;
+  position: absolute; /* Plasserer nederst til høyre > */
+  bottom: 15%;
+  left: 95%; /* < */
+  -webkit-transition: opacity 1s ease-out; /* Gjør animasjonen rolig */
+  transition: opacity 1s ease-out;
 }
 
 .scroll-prompt .scroll-prompt-shape {
-    position: relative; 
-    -webkit-animation: slidedown 2.25s infinite;
-    animation: slidedown 2.25s infinite; 
+  position: relative;
+  -webkit-animation: slidedown 2.25s infinite;
+  animation: slidedown 2.25s infinite;
 }
 .scroll-prompt .scroll-prompt-shape:before,
 .scroll-prompt .scroll-prompt-shape:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 3em;
-    height: 0.5em;
-    top: 0;
-    left: 0;
-    background: #fff;
-    -webkit-border-radius: 0;
-    border-radius: 0 0.25em 0.25em 0;
-    -webkit-transform-origin: bottom left;
-    transform-origin: bottom left;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 3em;
+  height: 0.5em;
+  top: 0;
+  left: 0;
+  background: #fff;
+  -webkit-border-radius: 0;
+  border-radius: 0 0.25em 0.25em 0;
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .scroll-prompt .scroll-prompt-shape:before {
-    -webkit-transform: scaleX(-1) rotate(-45deg);
-    transform: scaleX(-1) rotate(-45deg);
+  -webkit-transform: scaleX(-1) rotate(-45deg);
+  transform: scaleX(-1) rotate(-45deg);
 }
 
 .scroll-prompt .scroll-prompt-shape:after {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
-@-webkit-keyframes slidedown {/* Keyframes til slidedown animasjon:*/
-    0% {
-        opacity: 0;
-    }
-    75% {
-        opacity: 1;
-        -webkit-transform: translate(0, 80px);
-        transform: translate(0, 80px);
-    }
-    100% {
-        opacity: 0;
-        -webkit-transform: translate(0, 80px);
-        transform: translate(0, 80px);
-    }
+@-webkit-keyframes slidedown {
+  /* Keyframes til slidedown animasjon:*/
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: translate(0, 80px);
+    transform: translate(0, 80px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, 80px);
+    transform: translate(0, 80px);
+  }
 }

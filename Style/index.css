@@ -6,7 +6,7 @@
   display: grid;
   -ms-grid-rows: 60vh 20vh 20vh;
       grid-template-rows: 60vh 20vh 20vh;
-  border-bottom: 1vh solid #F7D15A;
+  border-bottom: 1vh solid #f7d15a;
   height: 99.5vh;
   text-align: center;
 }
@@ -16,29 +16,74 @@
 }
 
 #forside h3 {
-  font-family: acumin-pro-wide,sans-serif;
+  font-family: acumin-pro-wide, sans-serif;
   font-weight: 800;
   color: white;
 }
 
 #forside a {
-  font-family: acumin-pro-condensed,sans-serif;
+  font-family: acumin-pro-condensed, sans-serif;
   font-weight: 600;
   font-size: 2vw;
   text-align: center;
   padding: 14px 18px;
   color: white;
-  background-color: #47C2A9;
-  border-bottom: 3px solid #F7D15A;
+  background-color: #47c2a9;
+  border-bottom: 3px solid #f7d15a;
   text-decoration: none;
   border-radius: 12px;
 }
 
 #forside a:hover {
   /* Endrer knappens farger ved hover.*/
-  background-color: #F7D15A;
-  border-bottom: 3px solid #47C2A9;
+  background-color: #f7d15a;
+  border-bottom: 3px solid #47c2a9;
   color: black;
+}
+
+#mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000070;
+  z-index: 10;
+  visibility: hidden;
+}
+
+#mobileOverlay #mobilePopup {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 30px 20px;
+  width: 350px;
+  height: 250px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.623);
+  visibility: hidden;
+  z-index: 11;
+}
+
+#mobileOverlay #mobilePopup h3 {
+  border-bottom: #47c2a9 2px solid;
+}
+
+#mobileOverlay #mobilePopup img {
+  width: 30%;
+  margin: auto;
+}
+
+@media screen and (max-width: 900px) {
+  #mobileOverlay {
+    visibility: visible;
+  }
+  #mobileOverlay #mobilePopup {
+    visibility: visible;
+  }
 }
 
 /* Pilanimasjon til høyre: */
