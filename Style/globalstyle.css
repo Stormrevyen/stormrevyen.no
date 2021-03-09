@@ -2,7 +2,8 @@
 /* Globalt stilark - Alt i denne filen er felles for alle nettstedets sider. */
 @import url("https://use.typekit.net/nvi4ogw.css");
 /*Importerer fonter lisensert til Adobe Fonts*/
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -21,8 +22,8 @@ html, body {
       -ms-flex-flow: column;
           flex-flow: column;
   width: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(#CA3F44), to(#E98051));
-  background: linear-gradient(to top, #CA3F44, #E98051);
+  background: -webkit-gradient(linear, left bottom, left top, from(#ca3f44), to(#e98051));
+  background: linear-gradient(to top, #ca3f44, #e98051);
   /* Vertikal overgang fra orange til rød nedover siden. */
   padding: 0 0 2vw 0;
   z-index: auto;
@@ -120,7 +121,7 @@ header a {
   float: right;
   list-style-type: none;
   margin: 0 1vw;
-  font-family: acumin-pro-condensed,sans-serif;
+  font-family: acumin-pro-condensed, sans-serif;
   font-weight: 800;
 }
 
@@ -139,15 +140,29 @@ header a {
 
 .toppmeny li a:hover:not(.active) {
   /* Endrer farge på knapp så fremt det ikke er den aktive siden.*/
-  background-color: #F7D15A;
+  background-color: #f7d15a;
   color: black;
-  border-bottom: 3px solid #47C2A9;
+  border-bottom: 3px solid #47c2a9;
+}
+
+.toppmeny li .medlemDropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.toppmeny li .medlemDropdown:hover .dropdown-content {
+  display: block;
 }
 
 .toppmeny li .active {
   /* Setter farge på knapp hvis siden er aktiv*/
-  background-color: #47C2A9;
-  border-bottom: 3px solid #F7D15A;
+  background-color: #47c2a9;
+  border-bottom: 3px solid #f7d15a;
 }
 
 @media screen and (max-width: 900px) {
@@ -187,13 +202,13 @@ header a {
 
 .content h2 {
   padding: 0 1vw;
-  color: #47C2A9;
-  border-bottom: #47C2A9 2px solid;
+  color: #47c2a9;
+  border-bottom: #47c2a9 2px solid;
 }
 
 .content h3 {
   padding: 0 1vw;
-  color: #CA3F44;
+  color: #ca3f44;
 }
 
 .content a {
@@ -201,7 +216,7 @@ header a {
 }
 
 .content a:hover {
-  color: #CA3F44;
+  color: #ca3f44;
 }
 
 .content a i {
@@ -214,9 +229,10 @@ header a {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.content h4, .content a {
+.content h4,
+.content a {
   padding: 1vw;
-  color: #ED89A5;
+  color: #ed89a5;
   text-decoration: none;
 }
 
@@ -236,20 +252,20 @@ h2 {
 
 h3 {
   margin: 0;
-  font-family: acumin-pro-condensed,sans-serif;
+  font-family: acumin-pro-condensed, sans-serif;
   font-weight: 800;
   font-size: 1.2em;
 }
 
 h4 {
   margin: 0;
-  font-family: acumin-pro-condensed,sans-serif;
+  font-family: acumin-pro-condensed, sans-serif;
   font-weight: 400;
 }
 
 h6 {
   margin: 0;
-  font-family: acumin-pro-condensed,sans-serif;
+  font-family: acumin-pro-condensed, sans-serif;
   font-weight: 200;
   font-size: 0.7em;
 }
@@ -257,7 +273,7 @@ h6 {
 p {
   padding: 1vw;
   margin: 0;
-  font-family: acumin-pro,sans-serif;
+  font-family: acumin-pro, sans-serif;
   font-weight: 100;
 }
 
@@ -277,58 +293,72 @@ p {
 
 /*  - Footer -  */
 footer {
-  background-color: #47C2A9;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 30%;
+      grid-template-columns: 1fr 1fr 30%;
+  -ms-grid-rows: 3fr 1fr;
+      grid-template-rows: 3fr 1fr;
+  background-color: #47c2a9;
   color: white;
   height: auto;
   padding: 2vw 2vw 0 2vw;
-  font-family: acumin-pro-semi-condensed,sans-serif;
+  font-family: acumin-pro-semi-condensed, sans-serif;
   font-weight: 800;
 }
 
-footer a {
-  color: white;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #CA3F44;
-}
-
-footer a i {
-  font-size: 36px;
-  margin: 5px;
-}
-
-#footer-main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 2em;
-}
-
-#footer-main li {
+footer ul li {
   list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
 
-#footer-main div {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  color: #ca3f44;
+}
+
+footer ul li a i {
+  font-size: 36px;
+  margin: 5px;
+}
+
+footer #footer-right {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 2 / 2 / 3;
+  font-size: 2em;
+}
+
+footer #footer-left {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+  font-size: 2em;
+}
+
+footer #byline {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 2 / 1 / 3 / 4;
+  text-align: center;
+  font-size: 0.7em;
 }
 
 @media screen and (max-width: 600px) {
   /* Endrer footers oppbygning når viewport er smalere enn 600px, fungerer ikke optimalt og trenger mer arbeid.*/
-  #footer-main {
+  #footer-right {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column;
@@ -337,7 +367,7 @@ footer a i {
         -ms-flex-align: center;
             align-items: center;
   }
-  #footer-main div {
+  #footer-right div {
     margin: 1vw;
   }
   #footer-nav {
@@ -345,47 +375,10 @@ footer a i {
         -ms-flex-order: 1;
             order: 1;
   }
-  #footer-right {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-  #footer-right img {
-    max-width: 40%;
-  }
   #footer-mid {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
   }
-}
-
-#footer-left, #footer-mid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-#footer-mid div {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-#footer-logo {
-  height: 50%;
-  margin: auto;
-}
-
-#byline {
-  text-align: center;
-  font-size: .7em;
 }
 /*# sourceMappingURL=globalstyle.css.map */

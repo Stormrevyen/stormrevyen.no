@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style/globalstyle.css">
     <link rel="stylesheet" href="Style/sider.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script> <!--Kobler til js som inneholder flere ikoner-->
+    <script src="https://kit.fontawesome.com/fd6a2e0274.js" crossorigin="anonymous"></script>
     <link rel="icon" href="Media/Logo Stormrevyen mølle.svg">
     <title>Revyoversikt | STORMREVYEN</title>
 </head>
@@ -18,8 +18,17 @@
             <ul class="toppmeny">
                 <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
                 <li><a href="MeldDegPa.html">Meld deg på!</a></li>
-                <li><a class="active" href="revyoversikt.html">Revyoversikt</a></li>
+                <li><a href="revyoversikt.html" class="active">Revyoversikt</a></li>
                 <li><a href="Revystyret.html">Revystyret</a></li>
+                <li><a href="http://stormrevyen.shop" target="blank">Stormrevyen.shop</a></li>
+                <!--<li class="medlemDropdown">
+                    <a class="dropa">For medlemmer<i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                </li> -->
             </ul>
         </header>
 
@@ -40,62 +49,54 @@
                 <h2>2021</h2>
                 <img src="Media/SkjeggetIPostkassa_Square.jpg" alt="Skjegget-I-Postkassa" class="revyicon">
                 <p>Premiere 8.april 2021! <br>Billetter kommer snart for salg.</p>
-                <a href="skjegget-i-postkassa.html" class="revyButton"><h3>Se mer</h3></a>
+                <a href="Revyer/skjegget-i-postkassa.html" class="revyButton"><h3>Se mer</h3></a>
             </div>
 
             <div class="revyItem" id="Abort-mission">
                 <h2>2020</h2>
                 <img src="Media/Abort-Mission.jpg" alt="Abort-Mission" class="revyicon">
                 <p>Stormrevyen 2020 - Abort Mission ble desverre avlyst på grunn av de strenge smittevernstiltakene. Dette var veldig trist da revymedlemmene hadde brukt oppmot et halvt år på å skape revyen. </p>
-                <a href="abort-mission.html" class="revyButton"><h3>Se mer</h3></a>
+                <a href="Revyer/abort-mission.html" class="revyButton"><h3>Se mer</h3></a>
             </div>
 
             <div class="revyItem" id="Throwback"> 
                 <h2>2019</h2>
                 <img src="Media/Throwback.jpg" alt="Throwback" class="revyicon">
                 <p>"Throwback" var 2019-utgaven av stormrevyen med det så langt største engasjementet blandt både deltakere og publikum.</p>
-                <a href="throwback.html" class="revyButton"><h3>Se mer</h3></a>
+                <a href="Revyer/throwback.html" class="revyButton"><h3>Se mer</h3></a>
             </div>
 
             <div class="revyItem" id="Shitstorm"> 
                 <h2>2018</h2>
                 <img src="Media/Shitstorm.jpg" alt="Shitstorm" class="revyicon">
                 <p>"Shitstorm" er den andre revyen i årrekka, og blei en virkelig "god nummer to"</p>
-                <a href="shitstorm.html" class="revyButton"><h3>Se mer</h3></a>
+                <a href="Revyer/shitstorm.html" class="revyButton"><h3>Se mer</h3></a>
             </div>
 
             <div class="revyItem" id="I-vinden"> 
                 <h2>2017</h2>
                 <img src="Media/Ivinden.jpg" alt="I-vinden" class="revyicon">
                 <p>Tidenes første stormrevy tok sted i 2017. "I vinden" er grunnleggeren for en rekke enestående forestillinger. </p>
-                <a href="i-vinden.html" class="revyButton"><h3>Se mer</h3></a>
+                <a href="Revyer/i-vinden.html" class="revyButton"><h3>Se mer</h3></a>
             </div>
         </div>
 
     </div>
 
     <footer> <!--Felles footer for alle sider-->
-        <div id="footer-main">  <!--Øvre del av footer, inneholder tre deler horisontalt-->
-            <div id="footer-left">
-                <ul class="linklist" id="footer-nav"> <!--Liste med linker til plasser på nettstedet-->
-                    <li><a href="#" title="Tilbake til toppen"> <i class='fas fa-arrow-up'></i>Tilbake til toppen</a></li> <!--Href:# for å komme på toppen av siden.-->
-                    <li><a  href="MeldDegPa.html">Meld deg på!</a></li>
-                    <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
-                    <li><a href="Revystyret.html">Revystyret</a></li>
-                </ul>
-
-            </div>
-            <div id="footer-mid">
-                <ul class="linklist" id="footer-links"> <!--Linker til diverse SoMe, javascript importert i head bruker classene under og setter inn ikoner. -->
-                    <li><a href="https://www.facebook.com/Stormrevyen/" title="Facebook/Stormrevyen" target="blank"> <i class='fab fa-facebook-square'></i>Stormrevyen</a></li>
-                    <li><a href="https://www.instagram.com/stormrevyen/" title="Instagram/Stormrevyen" target="blank"> <i class='fab fa-instagram'></i>Stormrevyen</a></li>
-                    <li><a href="https://www.youtube.com/channel/UCe325iKhB-N4Ze4ipR9s-9g/" title="Youtube/Stormrevyen" target="blank"><i class='fab fa-youtube'></i>Stormrevyen</a></li>
-                    <li><a href="mailto:stormrevyen@gmail.com" title="stormrevyen@gmail.com" target="blank"> stormrevyen@gmail.com </a></li>
-                </ul>
-            </div>
-            <div id="footer-right"><div id="footer-logo"><a href="index.html"><img src="Media/Logo stormrevyen white_text.svg" alt="logo"></a></div></div>
-        </div>
-        <div id="byline">Laget av Anders Garberg <br> © 2020 <br> All rights reserved </div> <!--Nedre del av footer, copyright ol.-->
+        <ul id="footer-left"> <!--Liste med linker til plasser på nettstedet-->
+            <li><a href="#" title="Tilbake til toppen"> <i class='fas fa-arrow-up'></i> Tilbake til toppen</a></li> <!--Href:# for å komme på toppen av siden.-->
+            <li><a  href="MeldDegPa.html">Meld deg på!</a></li>
+            <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
+            <li><a href="Revystyret.html">Revystyret</a></li>
+        </ul>
+        <ul id="footer-right"> <!--Linker til diverse SoMe, javascript importert i head bruker classene under og setter inn ikoner. -->
+            <li><a href="https://www.facebook.com/Stormrevyen/" title="Facebook/Stormrevyen" target="blank"><i class='fab fa-facebook-square'></i> Stormrevyen</a></li>
+            <li><a href="https://www.instagram.com/stormrevyen/" title="Instagram/Stormrevyen" target="blank"><i class='fab fa-instagram'></i> Stormrevyen</a></li>
+            <li><a href="https://www.youtube.com/channel/UCe325iKhB-N4Ze4ipR9s-9g/" title="Youtube/Stormrevyen" target="blank"><i class='fab fa-youtube'></i> Stormrevyen</a></li>
+            <li><a href="mailto:stormrevyen@gmail.com" title="stormrevyen@gmail.com" target="blank"> stormrevyen@gmail.com </a></li>
+        </ul>
+        <div id="byline">Laget av Anders Garberg <br> © 2021 <br> All rights reserved </div> <!--Nedre del av footer, copyright ol.-->
     </footer>
 </body>
 </html>

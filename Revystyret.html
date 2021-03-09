@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style/globalstyle.css">
     <link rel="stylesheet" href="Style/sider.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script> <!--Kobler til js som inneholder flere ikoner-->
+    <script src="https://kit.fontawesome.com/fd6a2e0274.js" crossorigin="anonymous"></script>
     <link rel="icon" href="Media/Logo Stormrevyen mølle.svg">
     <title>Styret | STORMREVYEN</title>
 </head>
@@ -16,11 +16,20 @@
         <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
         <a href="index.html" id="hovedtittel">STORMREVYEN</a>
         <ul class="toppmeny">
-            <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
-            <li><a href="MeldDegPa.html">Meld deg på!</a></li>
-            <li><a href="revyoversikt.html">Revyoversikt</a></li>
-            <li><a class="active" href="Revystyret.html">Revystyret</a></li>
-        </ul>
+                <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
+                <li><a href="MeldDegPa.html">Meld deg på!</a></li>
+                <li><a href="revyoversikt.html">Revyoversikt</a></li>
+                <li><a href="Revystyret.html" class="active">Revystyret</a></li>
+                <li><a href="http://stormrevyen.shop" target="blank">Stormrevyen.shop</a></li>
+                <!--<li class="medlemDropdown">
+                    <a class="dropa">For medlemmer<i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                </li> -->
+            </ul>
     </header>
 
     <!--Javascript, endrer headers bakgrunnsfarge når man scroller: Hvis toppen av siden er mer enn 600px over, endre bakgrunnsfarge på header.        -->
@@ -148,27 +157,19 @@
     </div>
 
     <footer> <!--Felles footer for alle sider-->
-        <div id="footer-main">  <!--Øvre del av footer, inneholder tre deler horisontalt-->
-            <div id="footer-left">
-                <ul class="linklist" id="footer-nav"> <!--Liste med linker til plasser på nettstedet-->
-                    <li><a href="#" title="Tilbake til toppen"> <i class='fas fa-arrow-up'></i>Tilbake til toppen</a></li> <!--Href:# for å komme på toppen av siden.-->
-                    <li><a  href="MeldDegPa.html">Meld deg på!</a></li>
-                    <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
-                    <li><a href="Revystyret.html">Revystyret</a></li>
-                </ul>
-
-            </div>
-            <div id="footer-mid">
-                <ul class="linklist" id="footer-links"> <!--Linker til diverse SoMe, javascript importert i head bruker classene under og setter inn ikoner. -->
-                    <li><a href="https://www.facebook.com/Stormrevyen/" title="Facebook/Stormrevyen" target="blank"> <i class='fab fa-facebook-square'></i>Stormrevyen</a></li>
-                    <li><a href="https://www.instagram.com/stormrevyen/" title="Instagram/Stormrevyen" target="blank"> <i class='fab fa-instagram'></i>Stormrevyen</a></li>
-                    <li><a href="https://www.youtube.com/channel/UCe325iKhB-N4Ze4ipR9s-9g/" title="Youtube/Stormrevyen" target="blank"><i class='fab fa-youtube'></i>Stormrevyen</a></li>
-                    <li><a href="mailto:stormrevyen@gmail.com" title="stormrevyen@gmail.com" target="blank"> stormrevyen@gmail.com </a></li>
-                </ul>
-            </div>
-            <div id="footer-right"><div id="footer-logo"><a href="index.html"><img src="Media/Logo stormrevyen white_text.svg" alt="logo"></a></div></div>
-        </div>
-        <div id="byline">Laget av Anders Garberg <br> © 2020 <br> All rights reserved </div> <!--Nedre del av footer, copyright ol.-->
+        <ul id="footer-left"> <!--Liste med linker til plasser på nettstedet-->
+            <li><a href="#" title="Tilbake til toppen"> <i class='fas fa-arrow-up'></i> Tilbake til toppen</a></li> <!--Href:# for å komme på toppen av siden.-->
+            <li><a  href="MeldDegPa.html">Meld deg på!</a></li>
+            <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
+            <li><a href="Revystyret.html">Revystyret</a></li>
+        </ul>
+        <ul id="footer-right"> <!--Linker til diverse SoMe, javascript importert i head bruker classene under og setter inn ikoner. -->
+            <li><a href="https://www.facebook.com/Stormrevyen/" title="Facebook/Stormrevyen" target="blank"><i class='fab fa-facebook-square'></i> Stormrevyen</a></li>
+            <li><a href="https://www.instagram.com/stormrevyen/" title="Instagram/Stormrevyen" target="blank"><i class='fab fa-instagram'></i> Stormrevyen</a></li>
+            <li><a href="https://www.youtube.com/channel/UCe325iKhB-N4Ze4ipR9s-9g/" title="Youtube/Stormrevyen" target="blank"><i class='fab fa-youtube'></i> Stormrevyen</a></li>
+            <li><a href="mailto:stormrevyen@gmail.com" title="stormrevyen@gmail.com" target="blank"> stormrevyen@gmail.com </a></li>
+        </ul>
+        <div id="byline">Laget av Anders Garberg <br> © 2021 <br> All rights reserved </div> <!--Nedre del av footer, copyright ol.-->
     </footer>
 </body>
 </html>
