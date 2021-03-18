@@ -1,6 +1,4 @@
 @charset "UTF-8";
-/* Definerer fargekombinasjonen til logoen fra hver revy som variabler, brukt i hver av spotlight-sidene
-    og TidligereRevyer.html */
 #Skjegget-i-postkassa {
   --color1: #46378a;
   /* --color1 = Bakgrunnsfarge */
@@ -28,7 +26,6 @@
   --color2: #ff3a0e;
 }
 
-/*      /revyoversikt.html:   */
 #revyoversikt {
   /* Definerer en flexbox der elementene kan flyte og fordele seg fritt. */
   display: -webkit-box;
@@ -36,6 +33,7 @@
   display: flex;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
+  margin-bottom: 5vh;
 }
 
 .revyItem {
@@ -111,7 +109,6 @@
   margin: auto;
 }
 
-/*      abort-mission.html, i-vinden.html, shitstorm.html, throwback.html:  */
 header.orange {
   background-color: #e98051;
   /*Setter bakgrunnsfargen til header til en bestemt verdi. Skal være orange fra starten av, ikke fade inn som på de andre sidene.*/
@@ -134,7 +131,6 @@ header.orange {
 }
 
 .revy-spotlight .content h2 {
-  /* Bestemmer nye farger til overskriften i content-diver*/
   color: var(--color2);
   /* Bruker variabler definert øverst til å bestemme farger.*/
   border-bottom: var(--color2) 2px solid;
@@ -155,6 +151,36 @@ header.orange {
 
 .revyBanner img {
   width: 30%;
+}
+
+.revyBanner .tilbakecontainer {
+  width: 80%;
+  margin: 2vh auto;
+}
+
+.revyBanner .tilbakecontainer .tilbakeknapp {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: acumin-pro-condensed, sans-serif;
+  font-weight: 800;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin: 2px;
+  background-color: var(--color2);
+  color: white;
+  border-radius: 12px;
+}
+
+.revyBanner .tilbakecontainer .tilbakeknapp:hover {
+  background-color: var(--color1);
+  color: black;
+}
+
+.revyBanner .tilbakecontainer .tilbakeknapp#throwback {
+  color: black;
 }
 
 .youtubeWindow {

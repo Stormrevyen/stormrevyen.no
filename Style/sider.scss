@@ -1,5 +1,4 @@
-/* Definerer fargekombinasjonen til logoen fra hver revy som variabler, brukt i hver av spotlight-sidene
-    og TidligereRevyer.html */
+//** Definerer fargekombinasjonen til logoen fra hver revy som variabler, brukt i hver av spotlight-sidene og TidligereRevyer.html
 #Skjegget-i-postkassa {
   --color1: #46378a; /* --color1 = Bakgrunnsfarge */
   --color2: #fdc300; /* --color2 = Forgrunnsfagre */
@@ -25,11 +24,12 @@
   --color2: #ff3a0e;
 }
 
-/*      /revyoversikt.html:   */
+//**      /revyoversikt.html:
 #revyoversikt {
   /* Definerer en flexbox der elementene kan flyte og fordele seg fritt. */
   display: flex;
   flex-flow: wrap;
+  margin-bottom: 5vh;
 }
 
 .revyItem {
@@ -91,7 +91,7 @@
   margin: auto;
 }
 
-/*      abort-mission.html, i-vinden.html, shitstorm.html, throwback.html:  */
+//**      abort-mission.html, i-vinden.html, shitstorm.html, throwback.html:
 header.orange {
   background-color: #e98051; /*Setter bakgrunnsfargen til header til en bestemt verdi. Skal være orange fra starten av, ikke fade inn som på de andre sidene.*/
 }
@@ -106,7 +106,7 @@ header.orange {
   padding: 0 0 2vw 0;
   z-index: auto;
   .content h2 {
-    /* Bestemmer nye farger til overskriften i content-diver*/
+    // Bestemmer nye farger til overskriften i content-diver
     color: var(
       --color2
     ); /* Bruker variabler definert øverst til å bestemme farger.*/
@@ -126,6 +126,30 @@ header.orange {
   text-align: center;
   img {
     width: 30%;
+  }
+  .tilbakecontainer {
+    width: 80%;
+    margin: 2vh auto;
+    .tilbakeknapp {
+      width: fit-content;
+      font-family: acumin-pro-condensed, sans-serif;
+      font-weight: 800;
+      display: block;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      margin: 2px;
+      background-color: var(--color2);
+      color: white;
+      border-radius: 12px;
+      &:hover {
+        background-color: var(--color1);
+        color: black;
+      }
+      &#throwback {
+        color: black;
+      }
+    }
   }
 }
 

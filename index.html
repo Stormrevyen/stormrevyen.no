@@ -15,7 +15,7 @@
         <div id="mobilePopup">
             <img src="Media/Logo Stormrevyen mølle.svg" alt="Mølle">
             <h2>Denne siden er for øyeblikket under utbygging</h2>
-            <h3>Den inneholder derfor feilaktig informasjon og fungerer ikke optimalt.</h3>
+            <h3>Den inneholder derfor feilaktig informasjon og fungerer ikke optimalt.<br><b>Spesielt ikke på mobil!</b></h3>
             <button onclick="lukkPopup()">Lukk</button>
             <h6>09.03.2021</h6>
         </div>
@@ -26,26 +26,25 @@
           popup.classList.toggle("hide");
         }
       </script>
-  
 
-    <div id="helesiden"> <!--Brukes til å gi hele siden (minus footer) bakgrunnsfarge-->
-        <div id="forside"> <!--Stor logo med tekst og knapp over header-->
-            <div id="forside-img"><img src="Media/Logo stormrevyen white_text2021.png" alt="Stormrevyen 2021 logo"></div>
-            <div><h3>Kultursenteret ISAK 6. - 9. April 2021</h3></div>
-            <div><a href="MeldDegPa.html"> Meld deg på!</a></div>
-            <div class="scroll-prompt" id="js_scrollPrompt"><div class="scroll-prompt-shape"></div></div>
-        </div>
-
-        <!--Felles header for alle sider-->
-        <header id="header"><!--id="header" fordi id trengs når js bruker getElementById-->
+    <div id="forside"> <!--Stor logo med tekst og knapp over header-->
+        <div id="forside-img"><img src="Media/Logo stormrevyen white_text2021.png" alt="Stormrevyen 2021 logo"></div>
+        <div id="sip2021banner"><h1>SKJEGGET I POSTKASSA</h1></div>
+        <div id="dato"><h3>Kultursenteret ISAK 8. - 10. April 2021</h3></div>
+        <!--<div><a href="https://stormrevyen.shop/billetter" target="blank">Kjøp billetter</a></div>-->
+        <div class="scroll-prompt" id="js_scrollPrompt"><div class="scroll-prompt-shape"></div></div>
+    </div>
+    <div id="helesiden"> 
+        <header id="header">
             <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
             <a href="index.html" id="hovedtittel">STORMREVYEN</a>
             <ul class="toppmeny">
                 <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
-                <li><a href="MeldDegPa.html">Meld deg på!</a></li>
+                <!--<li><a href="MeldDegPa.html">Meld deg på!</a></li>-->
+                <li><a href="https://stormrevyen.shop/billetter" target=blank>Kjøp billetter</a></li>
                 <li><a href="revyoversikt.html">Revyoversikt</a></li>
                 <li><a href="Revystyret.html">Revystyret</a></li>
-                <li><a href="http://stormrevyen.shop" target="blank">Stormrevyen.shop</a></li>
+                <li><a href="https://stormrevyen.shop" target="blank">Stormrevyen.shop</a></li>
                 <!--<li class="medlemDropdown">
                     <a class="dropa">For medlemmer<i class="fa fa-caret-down"></i></a>
                     <div class="dropdown-content">
@@ -110,7 +109,7 @@
             <li><a href="https://www.youtube.com/channel/UCe325iKhB-N4Ze4ipR9s-9g/" title="Youtube/Stormrevyen" target="blank"><i class='fab fa-youtube'></i> Stormrevyen</a></li>
             <li><a href="mailto:stormrevyen@gmail.com" title="stormrevyen@gmail.com" target="blank"> stormrevyen@gmail.com </a></li>
         </ul>
-        <div id="byline">Laget av Anders Garberg <br> © 2021 <br> All rights reserved </div> <!--Nedre del av footer, copyright ol.-->
+        <div id="byline">© Anders Garberg 2021</div> <!--Nedre del av footer, copyright ol.-->
     </footer>
 </body>
 </html>

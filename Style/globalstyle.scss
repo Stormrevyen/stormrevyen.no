@@ -21,8 +21,8 @@ body {
     #ca3f44,
     #e98051
   ); /* Vertikal overgang fra orange til rød nedover siden. */
-  padding: 0 0 2vw 0;
-  z-index: auto; /* Sørger for at bakgrunnen alltid er det bakerste elementet. */
+  //padding: 0 0 2vw 0;
+  z-index: -10;
 }
 
 /*  - Header -    */
@@ -256,12 +256,11 @@ p {
 
 footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 30%;
-  grid-template-rows: 3fr 1fr;
+  grid-template-columns: 1fr 1fr 20%;
+  grid-template-rows: 1fr 4vh;
   background-color: #47c2a9;
   color: white;
   height: auto;
-  padding: 2vw 2vw 0 2vw;
   font-family: acumin-pro-semi-condensed, sans-serif;
   font-weight: 800;
   ul {
