@@ -10,33 +10,67 @@
     <title>Abort Mission 2020 | STORMREVYEN</title>
 </head>
 <body>
-    <div class="revy-spotlight" id="Skjegget-i-postkassa">
-        <!--Felles header for alle sider-->
-        <header id="header" class="orange"><!--id="header" fordi id trengs når js bruker getElementById-->
-            <a href="../index.html" id="hovedlogo"><img src='../Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
-            <a href="../index.html" id="hovedtittel">STORMREVYEN</a>
-            <ul class="toppmeny">
-                <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
-                <!--<li><a href="MeldDegPa.html">Meld deg på!</a></li>-->
+    <div class="sidenavcontainer">
+        <a class="mobile sidenavbutton active" onclick="toggleNav()"><i id="sidenavbuttonIcon"class="fas fa-bars"></i></a>
+        <div id="sidenav" class="sidenav">
+            <ul>
                 <li><a href="https://stormrevyen.shop/billetter" target=blank>Kjøp billetter</a></li>
                 <li><a href="revyoversikt.html">Revyoversikt</a></li>
                 <li><a href="Revystyret.html">Revystyret</a></li>
-                <li><a href="https://stormrevyen.shop" target="blank">Stormrevyen.shop</a></li>
-                <!--<li class="medlemDropdown">
-                    <a class="dropa">For medlemmer<i class="fa fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
-                    </div>
-                </li> -->
+                <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
             </ul>
-        </header>
+        </div>
+    </div>
+
+    <script>
+        var navstate = 0;
+        function toggleNav() {
+            if(navstate == 1){
+                if(window.innerWidth > 700){
+                    document.getElementById("sidenav").style.width = "40%";
+                }else{
+                    document.getElementById("sidenav").style.width = "100%";
+                }
+                document.getElementById("sidenavbuttonIcon").className = "fas fa-times";
+                navstate = 0;
+            }else if(navstate == 0){
+                document.getElementById("sidenav").style.width = "0";
+                document.getElementById("sidenavbuttonIcon").className = "fas fa-bars";
+                navstate = 1;
+            }
+        }
+    </script>
+
+    <div class="revy-spotlight" id="Skjegget-i-postkassa">
+        <!--Felles header for alle sider-->
+        <header id="header">
+        <a href="../index.html" id="hovedlogo"><img src='../Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
+        <a href="../index.html" id="hovedtittel">STORMREVYEN</a>
+        <ul class="toppmeny">
+            <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
+            <!--<li><a href="MeldDegPa.html">Meld deg på!</a></li>-->
+            <li><a href="https://stormrevyen.shop/billetter" target=blank>Kjøp billetter</a></li>
+            <li><a href="../revyoversikt.html" class="active">Revyoversikt</a></li>
+            <li><a href="../Revystyret.html">Revystyret</a></li>
+            <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
+        </ul>
+    </header>
+    <script>
+        function openNav() {
+            if(window.innerWidth > 700){
+                document.getElementById("sidenav").style.width = "40%";
+            }else{
+                document.getElementById("sidenav").style.width = "100%";
+            }
+        }
+        
+        function closeNav() {
+          document.getElementById("sidenav").style.width = "0";
+        }
+    </script>
 
         <div class="revyBanner">
-            <div class="tilbakecontainer">
-                <a href="../revyoversikt.html" class="tilbakeknapp">Tilbake til oversikten</a>
-            </div>
+            <a href="../revyoversikt.html" class="tilbakeknapp">Tilbake til oversikten</a>
             <img src="../Media/SkjeggetIPostkassa_Square.jpg" alt="Abort Mission">
         </div>
 

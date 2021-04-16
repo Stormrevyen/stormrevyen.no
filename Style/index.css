@@ -136,7 +136,7 @@ html {
   display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   #forside {
     display: none;
   }

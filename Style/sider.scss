@@ -96,15 +96,44 @@ header.orange {
   background-color: #e98051; /*Setter bakgrunnsfargen til header til en bestemt verdi. Skal være orange fra starten av, ikke fade inn som på de andre sidene.*/
 }
 .revy-spotlight {
-  background-color: var(
-    --color1
-  ); /* Bruker variabler definert øverst til å bestemme farger.*/
+  background-color: var(--color1);
   color: var(--color2);
-  display: flex;
+  //display: flex;
   flex-flow: column;
   width: 100%;
   padding: 0 0 2vw 0;
   z-index: auto;
+  .revyBanner {
+    margin-top: 1vh;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 10% 1fr 2fr 1fr 10%;
+    img {
+      width: 100%;
+      grid-area: 1 / 3 / 2 / 4;
+    }
+    .tilbakeknapp {
+      grid-area: 1 / 2 / 2 / 3;
+      width: fit-content;
+      height: fit-content;
+      font-family: acumin-pro-condensed, sans-serif;
+      font-weight: 800;
+      display: block;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      margin: 2px;
+      background-color: var(--color2);
+      color: var(--color1);
+      border-radius: 12px;
+      &:hover {
+        background-color: var(--color1);
+        color: var(--color2);
+      }
+    }
+  }
   .content h2 {
     // Bestemmer nye farger til overskriften i content-diver
     color: var(
@@ -116,40 +145,6 @@ header.orange {
     /*Endrer Throwback til farge 1 da Throwback sin farge 2 er for lys til hvit bakgrunn.*/
     color: var(--color1);
     border-bottom: var(--color1) 2px solid;
-  }
-}
-
-.revyBanner {
-  /*Danner øverste del av siden under header, revylogo sentrert på midten som blander inn med resten av siden. > */
-  width: 100%;
-  display: block;
-  text-align: center;
-  img {
-    width: 30%;
-  }
-  .tilbakecontainer {
-    width: 80%;
-    margin: 2vh auto;
-    .tilbakeknapp {
-      width: fit-content;
-      font-family: acumin-pro-condensed, sans-serif;
-      font-weight: 800;
-      display: block;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      margin: 2px;
-      background-color: var(--color2);
-      color: white;
-      border-radius: 12px;
-      &:hover {
-        background-color: var(--color1);
-        color: black;
-      }
-      &#throwback {
-        color: black;
-      }
-    }
   }
 }
 

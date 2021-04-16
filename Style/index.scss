@@ -110,7 +110,8 @@ html {
   display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
+  //** HUSK Å ENDRE DETTE I GLOBALSTYLE OG JAVASCRIPT
   #forside {
     display: none;
   }

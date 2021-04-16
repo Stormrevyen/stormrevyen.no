@@ -28,9 +28,84 @@ body {
   z-index: -10;
 }
 
+.sidenavbutton {
+  position: fixed;
+  display: none;
+  color: white;
+  top: 30px;
+  right: 4vw;
+  z-index: 10;
+}
+
+@media screen and (max-width: 1000px) {
+  .sidenavbutton {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .sidenavbutton {
+    top: 20px;
+  }
+}
+
+.sidenavbutton #sidenavbuttonIcon {
+  font-size: 2em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 570px) {
+  .sidenavbutton #sidenavbuttonIcon {
+    font-size: 1.5em;
+  }
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 6;
+  top: 0;
+  left: 0;
+  background-color: #f7d15a;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 60px;
+  font-family: acumin-pro-semi-condensed, sans-serif;
+  font-weight: 800;
+  font-size: 2em;
+}
+
+.sidenav ul li {
+  list-style-type: none;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.sidenav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidenav ul li a:hover {
+  color: #ca3f44;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
 /*  - Header -    */
 header {
-  padding: 20px 10px;
+  padding: 3vh 1vw;
   position: -webkit-sticky;
   position: sticky;
   /* Fester header til toppen av viewport når man har scrollet ned til den.*/
@@ -40,6 +115,16 @@ header {
   transition: 0.2s;
   z-index: 5;
   /* Sørger for at header ligger foran alle andre elementer. */
+}
+
+@media screen and (max-width: 570px) {
+  header {
+    padding: 1vh 1vw;
+  }
+}
+
+header:not(.scrollHeader) {
+  background-color: #e98051;
 }
 
 header a {
@@ -56,13 +141,17 @@ header a {
   margin-top: -25px;
   -webkit-animation: rotation 2s infinite linear;
           animation: rotation 2s infinite linear;
-  /* Roterer vindmøllen */
 }
 
 #hovedlogo:hover {
-  /* Stopper animasjon ved hover */
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
+}
+
+@media screen and (max-width: 570px) {
+  #hovedlogo {
+    display: none;
+  }
 }
 
 @-webkit-keyframes rotation {
@@ -94,7 +183,13 @@ header a {
   font-weight: 900;
   font-style: italic;
   color: white;
-  font-size: 40px;
+  font-size: 2.5em;
+}
+
+@media screen and (max-width: 570px) {
+  #hovedtittel {
+    font-size: 1.7em;
+  }
 }
 
 #hovedtittel:hover {
@@ -157,10 +252,23 @@ header a {
   display: block;
 }
 
+.toppmeny li.mobile {
+  display: none;
+}
+
 .toppmeny li .active {
   /* Setter farge på knapp hvis siden er aktiv*/
   background-color: #47c2a9;
   border-bottom: 3px solid #f7d15a;
+}
+
+@media screen and (max-width: 1000px) {
+  .toppmeny li:not(.mobile) {
+    display: none;
+  }
+  .toppmeny li.mobile {
+    display: inline;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -195,7 +303,7 @@ header a {
 
 .content iframe {
   width: 100%;
-  height: 80vh;
+  height: 40vw;
 }
 
 .content h2 {
@@ -234,11 +342,23 @@ header a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 1000px) {
+  .content {
+    width: 96%;
+  }
+}
+
 h1 {
   margin: 1vw;
   font-family: acumin-pro, sans-serif;
   font-weight: 800;
   font-size: 3em;
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 2em;
+  }
 }
 
 h2 {
@@ -248,11 +368,23 @@ h2 {
   font-size: 1.4em;
 }
 
+@media screen and (max-width: 700px) {
+  h2 {
+    font-size: 1.2em;
+  }
+}
+
 h3 {
   margin: 0;
   font-family: acumin-pro-condensed, sans-serif;
   font-weight: 800;
   font-size: 1.2em;
+}
+
+@media screen and (max-width: 700px) {
+  h3 {
+    font-size: 1.2em;
+  }
 }
 
 h4 {
@@ -289,14 +421,21 @@ p {
      object-fit: cover;
 }
 
+@media screen and (max-width: 1000px) {
+  .imgContent {
+    width: 96%;
+  }
+}
+
 /*  - Footer -  */
 footer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 20%;
-      grid-template-columns: 1fr 1fr 20%;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 4vh;
       grid-template-rows: 1fr 4vh;
+  padding: 0 2vw;
   background-color: #47c2a9;
   color: white;
   height: auto;
@@ -318,11 +457,6 @@ footer ul li a {
 
 footer ul li a:hover {
   color: #ca3f44;
-}
-
-footer ul li a i {
-  font-size: 36px;
-  margin: 5px;
 }
 
 footer #footer-right {
@@ -353,29 +487,34 @@ footer #byline {
   font-size: 0.7em;
 }
 
-@media screen and (max-width: 600px) {
-  /* Endrer footers oppbygning når viewport er smalere enn 600px, fungerer ikke optimalt og trenger mer arbeid.*/
-  #footer-right {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+@media screen and (max-width: 700px) {
+  footer {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 4vh;
+        grid-template-rows: 1fr 1fr 4vh;
+    font-size: 3vw;
   }
-  #footer-right div {
-    margin: 1vw;
+  footer #footer-left {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 1 / 2 / 2;
   }
-  #footer-nav {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+  footer #footer-right {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 2 / 1 / 3 / 2;
   }
-  #footer-mid {
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
+  footer #byline {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 3 / 1 / 4 / 2;
   }
 }
 /*# sourceMappingURL=globalstyle.css.map */

@@ -10,33 +10,59 @@
     <title>Meld deg på! | STORMREVYEN</title>
 </head>
 <body>
-    <div id="helesiden">
-        <!--Felles header for alle sider-->
-        <header id="header"><!--id="header" fordi id trengs når js bruker getElementById-->
-            <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
-            <a href="index.html" id="hovedtittel">STORMREVYEN</a>
-            <ul class="toppmeny">
-                <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
-                <li><a href="MeldDegPa.html" class="active">Meld deg på!</a></li>
+    <div class="sidenavcontainer">
+        <a class="mobile sidenavbutton active" onclick="toggleNav()"><i id="sidenavbuttonIcon"class="fas fa-bars"></i></a>
+        <div id="sidenav" class="sidenav">
+            <ul>
+                <li><a href="https://stormrevyen.shop/billetter" target=blank>Kjøp billetter</a></li>
                 <li><a href="revyoversikt.html">Revyoversikt</a></li>
                 <li><a href="Revystyret.html">Revystyret</a></li>
-                <li><a href="https://stormrevyen.shop" target="blank">Stormrevyen.shop</a></li>
-                <!--<li class="medlemDropdown">
-                    <a class="dropa">For medlemmer<i class="fa fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
-                    </div>
-                </li> -->
+                <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
             </ul>
-        </header>
+        </div>
+    </div>
+    <script>
+        var navstate = 0;
+        function toggleNav() {
+            if(navstate == 1){
+                if(window.innerWidth > 700){
+                    document.getElementById("sidenav").style.width = "40%";
+                }else{
+                    document.getElementById("sidenav").style.width = "100%";
+                }
+                document.getElementById("sidenavbuttonIcon").className = "fas fa-times";
+                navstate = 0;
+            }else if(navstate == 0){
+                document.getElementById("sidenav").style.width = "0";
+                document.getElementById("sidenavbuttonIcon").className = "fas fa-bars";
+                navstate = 1;
+            }
+        }
+    </script>
+    
+
+    <div id="helesiden">
+        <!--Felles header for alle sider-->
+        <header id="header">
+        <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
+        <a href="index.html" id="hovedtittel">STORMREVYEN</a>
+        <ul class="toppmeny">
+            <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
+            <!--<li><a href="MeldDegPa.html">Meld deg på!</a></li>-->
+            <li><a href="https://stormrevyen.shop/billetter" target=blank>Kjøp billetter</a></li>
+            <li><a href="revyoversikt.html">Revyoversikt</a></li>
+            <li><a href="Revystyret.html">Revystyret</a></li>
+            <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
+        </ul>
+    </header>
 
         <!--Javascript, endrer headers bakgrunnsfarge når man scroller: Hvis toppen av siden er mer enn 600px over, endre bakgrunnsfarge på header.        -->
         <script>
             window.onscroll = function() {scrollFunction()};
             function scrollFunction() {
-            if (document.documentElement.scrollTop > 0) { 
+                if (window.innerWidth < 1000){
+                    document.getElementById("header").style.backgroundColor = "#E98051";
+                }else if (document.documentElement.scrollTop > window.innerHeight) { 
                 document.getElementById("header").style.backgroundColor = "#E98051";} 
                 else {document.getElementById("header").style.backgroundColor = "unset";}
             }
