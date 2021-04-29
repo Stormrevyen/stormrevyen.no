@@ -47,19 +47,14 @@
             if(navwidth == "0px"){ //toggle on
                 if(window.innerWidth > 700){
                     document.getElementById("sidenav").style.width = "40%";
-                    console.log("1");
                 }else{
                     document.getElementById("sidenav").style.width = "100%";
-                    console.log("2");
                 }
                 document.getElementById("sidenavbuttonIcon").className = "fas fa-times";
-                console.log("3");
             }else{ //toggle off
                 document.getElementById("sidenav").style.width = "0";
                 document.getElementById("sidenavbuttonIcon").className = "fas fa-bars";
-                console.log("4");
             }
-            console.log("5");
         }
     </script>
   

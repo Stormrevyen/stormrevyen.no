@@ -1,19 +1,10 @@
-//** Listen for auth status changes
-auth.onAuthStateChanged(user => {
-    if(user){
-        db.collection('posts').onSnapshot(snapshot => {
-            setupPosts(snapshot.docs);
-        }, err => {
-            console.log(err.message);
-        });
-    }else{
-        setupPosts([]);
-    }
+db.collection('posts').onSnapshot(snapshot => {
+    setupPosts(snapshot.docs);
 });
 
 const feed = document.querySelector('#feed');
 
-//**  setup posts
+//setup posts
 const setupPosts = (data) => {
     let html = '';
     data.forEach(doc => {

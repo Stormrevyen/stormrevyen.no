@@ -238,20 +238,6 @@ header a {
   border-bottom: 3px solid #47c2a9;
 }
 
-.toppmeny li .medlemDropdown .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.toppmeny li .medlemDropdown:hover .dropdown-content {
-  display: block;
-}
-
 .toppmeny li.mobile {
   display: none;
 }
@@ -304,6 +290,10 @@ header a {
   margin: 0.5vh 0.5vw;
 }
 
+.account-nav li.left {
+  float: left;
+}
+
 .account-nav li a {
   color: #ca3f44;
   text-decoration: none;
@@ -312,6 +302,7 @@ header a {
 
 .account-nav li a:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .account-nav .logged-in,
@@ -353,7 +344,7 @@ header a {
   width: 80%;
   height: 4vh;
   margin: 1vh 2vw;
-  padding-left: 45px;
+  padding-left: 2vw;
   border-radius: 30px;
 }
 
@@ -377,18 +368,14 @@ header a {
   font-weight: bold;
 }
 
-.popup input[type="email"] {
-  background-image: url(../Media/envelope-regular.svg);
-  -webkit-backdrop-filter: #47c2a9;
-  background-repeat: no-repeat;
-  background-position: 5px 5px;
-  background-size: 4vh;
-}
-
 .popup input:focus {
   border: 3px solid white;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+.popup input.big {
+  height: 10vh;
 }
 
 .popup button {
@@ -437,6 +424,19 @@ header a {
 
 .popup a:hover {
   color: #47c2a9;
+}
+
+.popup#popup-account {
+  text-align: center;
+}
+
+.popup#popup-account h2 {
+  text-align: left;
+}
+
+.popup#popup-account p:nth-last-child(2) {
+  color: #ca3f44;
+  font-size: 2em;
 }
 
 #feed {
