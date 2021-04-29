@@ -76,6 +76,7 @@ body {
   font-family: acumin-pro-semi-condensed, sans-serif;
   font-weight: 800;
   font-size: 2em;
+  color: white;
 }
 
 .sidenav ul li {
@@ -86,8 +87,8 @@ body {
 }
 
 .sidenav ul li a {
-  color: white;
   text-decoration: none;
+  color: white;
 }
 
 .sidenav ul li a:hover {
@@ -306,7 +307,8 @@ header a {
 }
 
 .account-nav .logged-in,
-.account-nav .logged-out {
+.account-nav .logged-out,
+.account-nav .admin {
   display: none;
 }
 
@@ -437,6 +439,65 @@ header a {
 .popup#popup-account p:nth-last-child(2) {
   color: #ca3f44;
   font-size: 2em;
+}
+
+#create-form {
+  background-color: white;
+}
+
+#create-form input {
+  color: #47c2a9;
+  border: 4px solid #47c2a9;
+  width: 90%;
+  height: 4vh;
+  margin: 1vh 2vw;
+  padding-left: 2vw;
+  border-radius: 30px;
+}
+
+#create-form input::-webkit-input-placeholder {
+  color: #47c2a9;
+  font-weight: bold;
+}
+
+#create-form input:-ms-input-placeholder {
+  color: #47c2a9;
+  font-weight: bold;
+}
+
+#create-form input::-ms-input-placeholder {
+  color: #47c2a9;
+  font-weight: bold;
+}
+
+#create-form input::placeholder {
+  color: #47c2a9;
+  font-weight: bold;
+}
+
+#create-form input:focus {
+  border: 3px solid white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#create-form input.big {
+  height: 10vh;
+}
+
+#create-form button {
+  background-color: #47c2a9;
+  color: white;
+  font-weight: bold;
+  margin: 1vh 2vw;
+  border: none;
+  padding: 1vh 2vw;
+  border-radius: 30px;
+}
+
+#create-form button:hover {
+  background-color: #ca3f44;
+  cursor: pointer;
 }
 
 #feed {

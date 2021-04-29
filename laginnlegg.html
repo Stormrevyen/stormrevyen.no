@@ -9,59 +9,63 @@
     <link rel="icon" href="Media/Logo Stormrevyen mølle.svg">
     <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
-    <title>Styret | STORMREVYEN</title>
+    <title>Lag nytt innlegg | STORMREVYEN</title>
 </head>
 <body>
-    
-
-    <!--** SIGN IN POPUP-->
+    <!--** POPUPS-->
+    <!--Signin-->
     <div id="popup-signup" class="popup">
         <div class="popup-content">
             <a onclick="toggle('signup')"><i class="fas fa-times"></i></a>
             <h2>Lag en konto</h2>
             <form action="" id="signup-form">
-                <input type="email" id="signup-email" placeholder="Epost" required/>
-                <input type="password" id="signup-password" placeholder="Nytt passord" required/>
+                <input type="email" id="signup-email" placeholder="Epost *" required/>
+                <input type="text" id="signup-displayname" placeholder="Fullt navn *" required>
+                <input type="password" id="signup-password" placeholder="Nytt passord *" required/>
+                <input type="text" id="signup-bio" placeholder="Biografi">
                 <button>Lag ny konto</button>
+                <i>* påkrevd</i>
             </form>
         </div>
     </div>
 
-    <!--** LOG IN POPUP-->
+    <!--Login-->
     <div id="popup-login" class="popup">
         <div class="popup-content">
             <a onclick="toggle('login')"><i class="fas fa-times"></i></a>
             <h2>Logg på!</h2>
             <form action="" id="login-form">
-                <input type="email" id="login-email" placeholder="Epost" required/>
-                <input type="password" id="login-password" placeholder="Passord" required/>
+                <input type="email" id="login-email" placeholder="Epost *" required/>
+                <input type="password" id="login-password" placeholder="Passord *" required/>
                 <button>Logg inn</button>
+                <i>* påkrevd</i>
             </form>
         </div>
     </div>
 
-    <!--** ACCOUNT POPUP-->
+    <!--Acc-->
     <div id="popup-account" class="popup">
         <div class="popup-content">
             <a onclick="toggle('account')"><i class="fas fa-times"></i></a>
             <h2>Kontodetaljer</h2>
-            <ul class="account-details">
-                <li>Epost: <string id="user-email"></string></li>
-                <li>Visningsnavn: <string id="user-displayname"></string></li>
-                <li>Medlem: <string id="user-member"></string></li>
-                <li>Gruppetildeling: <string id="user-group"></string></li>
-            </ul>
+            <div class="account-details"></div>
+            <button onclick="toggle('message')">Rapporter feil</button>
         </div>
     </div>
 
-    <div id="popup-account" class="popup">
+    <!--Msg-->
+    <div id="popup-message" class="popup">
         <div class="popup-content">
-            <a onclick="toggle('account')"><i class="fas fa-times"></i></a>
-            <h4>Endre dine kontodetaljer</h4>
-            <form action="" class="account-changeDetails">
-                <input type="email" id="user-email" value="Epostadressen din står her." required>
-                <input type="text" id="user-displayname" value="">
+            <a onclick="toggle('message')"><i class="fas fa-times"></i></a>
+            <h2>Skriv en medling</h2>
+            <h5>Her kan du skrive en melding til teknisk ansvarlig Anders Garberg dersom det oppstår noen feil eller du har spørsmål.</h5>
+            <form action="" id="message-form">
+                <input type="text" id="message-title" placeholder="Tittel *" required/>
+                <input type="text" id="message-message" class="big" placeholder="Melding *" required>
+                <button>Send melding</button>
+                <i>* påkrevd</i>
             </form>
+            <i>Svar kommer på epost innen 2-3 virkedager.</i>
         </div>
     </div>
 
@@ -73,12 +77,12 @@
                 <li><a href="revyoversikt.html">Revyoversikt</a></li>
                 <li><a href="Revystyret.html">Revystyret</a></li>
                 <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
-                <li>_______</li>
-                <li class="logged-out"><a href="#" onclick="toggle('login')">Logg inn</a></li>
-                <li class="logged-out"><a href="#" onclick="toggle('signup')">Lag ny konto</a></li>
-                <li class="logged-in"><a href="#" onclick="toggle('account')">Min konto</a></li>
-                <li class="logged-in"><a href="#" onclick="logoutFunc()">Logg ut</a></li>
-                <li class="logged-in"><a href="#">Lag innlegg</a></li>
+                <li>______________</li>
+                <li class="logged-out"><a onclick="toggle('login')">Logg inn</a></li>
+                <li class="logged-out"><a onclick="toggle('signup')">Lag ny konto</a></li>
+                <li class="logged-in"><a onclick="toggle('account')">Min konto</a></li>
+                <li class="logged-in"><a class="logout">Logg ut</a></li>
+                <li class="admin"><a href="laginnlegg.html">Lag innlegg</a></li>
             </ul>
         </div>
     </div>
@@ -103,36 +107,29 @@
     </script>
 
     <div id="helesiden">
-    <ul class="account-nav">
-        <li class="logged-in">
-            <a href="#" class="popup-trigger" onclick="toggle('account')">Konto</a>
-        </li>
-        <li class="logged-in">
-            <a href="#" id="logout">Logg ut</a>
-        </li>
-        <li class="logged-in">
-            <a href="#">Lag innlegg</a>
-        </li>
-        <li class="logged-out">
-            <a href="#" class="popup-trigger" onclick="toggle('signup')">Lag konto</a>
-        </li>
-        <li class="logged-out">
-            <a href="#" class="popup-trigger" onclick="toggle('login')">Logg inn</a>
-        </li>
-    </ul>
-    <script>
-        function toggle(item){
-            var popup = document.getElementById(`popup-${item}`);
-            if (popup.style.display === 'block') {
-                popup.style.display = 'none';
-            } else {
-                document.getElementById('popup-login').style.display = 'none';
-                document.getElementById('popup-account').style.display = 'none';
-                document.getElementById('popup-signup').style.display = 'none';
-                popup.style.display = 'block';
+        <ul class="account-nav">
+            <li class="logged-in"><a onclick="toggle('account')">Konto</a></li>
+            <li class="logged-in"><a class="logout">Logg ut</a></li>
+            <li class="admin"><a href="laginnlegg.html">Lag innlegg</a></li>
+            <li class="logged-in left"><a onclick="toggle('account')" id="loginStatus"></a></li>
+            <li class="logged-out"><a onclick="toggle('signup')">Lag konto</a></li>
+            <li class="logged-out"><a onclick="toggle('login')">Logg inn</a></li>
+        </ul>
+        <script>
+            function toggle(item){
+                var popup = document.getElementById(`popup-${item}`);
+                if (popup.style.display === 'block') {
+                    popup.style.display = 'none';
+                } else {
+                    document.getElementById('popup-login').style.display = 'none';
+                    document.getElementById('popup-account').style.display = 'none';
+                    document.getElementById('popup-message').style.display = 'none';
+                    document.getElementById('popup-signup').style.display = 'none';
+                    popup.style.display = 'block';
+                }
             }
-        }
-    </script>
+        </script>
+
     <!--Felles header for alle sider-->
    <header id="header">
         <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
@@ -157,12 +154,13 @@
    </script>
 
     <form id="create-form">
-        <input type="text" id="title" placeholder="Tittel" required>
-        <input type="text" id="content" placeholder="Innhold...">
+        <input type="text" id="title" placeholder="Tittel *" required>
+        <input type="text" id="content" class="big" placeholder="Innhold *">
         <input type="url" id="image" placeholder="Bildelink (få Anders til å laste opp)">
         <input type="url" id="youtube" placeholder="Link til YT-video for innebygging">
-        <input type="text" id="author" placeholder="Forfatter" required>
+        <input type="text" id="author" placeholder="Forfatter *" required> <!--TODO Få den til å finne ut dette selv!-->
         <button>Publiser</button>
+        <i>* påkrevd</i>
     </form>
 
 

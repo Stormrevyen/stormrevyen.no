@@ -21,9 +21,7 @@ createForm.addEventListener('submit', (e) => {
         timestamp: formattedTime,
     }).then(() => {
         createForm.reset();
-        //TODO Fiks dette!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //location.replace("https://stormrevyen.no")
-        location.replace("login.html")
+        location.replace("https://stormrevyen.no")
     }).catch(err => {
         console.log(err.message);
     });

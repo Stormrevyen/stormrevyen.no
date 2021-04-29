@@ -14,9 +14,11 @@ auth.onAuthStateChanged(user => {
 //** UI
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
+const adminLinks = document.querySelectorAll('.admin');
 const accountDetails = document.querySelector('.account-details');
 const loginStatus = document.querySelector('#loginStatus');
 
+//TODO Fiks så den han hente user, får feilmeldning!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const setupUI = (user) => {
     if(user){
         db.collection('users').doc(user.uid).get().then(doc => {
@@ -33,9 +35,11 @@ const setupUI = (user) => {
             }
 
             if(doc.data().styret == true){
-                var styretstate = "REVYSTYRET"
+                var styretstate = "REVYSTYRET";
+                adminLinks.forEach(item => item.style.display = 'block');
             }else{
                 var styretstate = "";
+                adminLinks.forEach(item => item.style.display = 'none');
             }
 
             const account = `
@@ -49,15 +53,18 @@ const setupUI = (user) => {
 
             accountDetails.innerHTML = account;
             loginStatus.innerHTML = status;
+
         });
         
         loggedInLinks.forEach(item => item.style.display = 'block');
         loggedOutLinks.forEach(item => item.style.display = 'none');
+        
     } else {
         accountDetails.innerHTML = '';
 
         loggedInLinks.forEach(item => item.style.display = 'none');
         loggedOutLinks.forEach(item => item.style.display = 'block');
+        adminLinks.forEach(item => item.style.display = 'none');
     }
 }
 

@@ -9,39 +9,41 @@
     <link rel="icon" href="Media/Logo Stormrevyen mølle.svg">
     <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
-    <title>Styret | STORMREVYEN</title>
+    <title>Login | STORMREVYEN</title>
 </head>
 <body>
-
-    <!--** SIGN IN POPUP-->
+    <!--** POPUPS-->
+    <!--Signin-->
     <div id="popup-signup" class="popup">
         <div class="popup-content">
             <a onclick="toggle('signup')"><i class="fas fa-times"></i></a>
             <h2>Lag en konto</h2>
             <form action="" id="signup-form">
-                <input type="email" id="signup-email" placeholder="Epost" required/>
-                <input type="text" id="signup-displayname" placeholder="Fullt navn" required>
-                <input type="password" id="signup-password" placeholder="Nytt passord" required/>
+                <input type="email" id="signup-email" placeholder="Epost *" required/>
+                <input type="text" id="signup-displayname" placeholder="Fullt navn *" required>
+                <input type="password" id="signup-password" placeholder="Nytt passord *" required/>
                 <input type="text" id="signup-bio" placeholder="Biografi">
                 <button>Lag ny konto</button>
+                <i>* påkrevd</i>
             </form>
         </div>
     </div>
 
-    <!--** LOG IN POPUP-->
+    <!--Login-->
     <div id="popup-login" class="popup">
         <div class="popup-content">
             <a onclick="toggle('login')"><i class="fas fa-times"></i></a>
             <h2>Logg på!</h2>
             <form action="" id="login-form">
-                <input type="email" id="login-email" placeholder="Epost" required/>
-                <input type="password" id="login-password" placeholder="Passord" required/>
+                <input type="email" id="login-email" placeholder="Epost *" required/>
+                <input type="password" id="login-password" placeholder="Passord *" required/>
                 <button>Logg inn</button>
+                <i>* påkrevd</i>
             </form>
         </div>
     </div>
 
-    <!--** ACCOUNT POPUP-->
+    <!--Acc-->
     <div id="popup-account" class="popup">
         <div class="popup-content">
             <a onclick="toggle('account')"><i class="fas fa-times"></i></a>
@@ -51,16 +53,17 @@
         </div>
     </div>
 
-    <!--** MESSAGE POPUP-->
+    <!--Msg-->
     <div id="popup-message" class="popup">
         <div class="popup-content">
             <a onclick="toggle('message')"><i class="fas fa-times"></i></a>
             <h2>Skriv en medling</h2>
             <h5>Her kan du skrive en melding til teknisk ansvarlig Anders Garberg dersom det oppstår noen feil eller du har spørsmål.</h5>
             <form action="" id="message-form">
-                <input type="text" id="message-title" placeholder="Tittel" required/>
-                <input type="text" id="message-message" class="big" placeholder="Melding" required>
+                <input type="text" id="message-title" placeholder="Tittel *" required/>
+                <input type="text" id="message-message" class="big" placeholder="Melding *" required>
                 <button>Send melding</button>
+                <i>* påkrevd</i>
             </form>
             <i>Svar kommer på epost innen 2-3 virkedager.</i>
         </div>
@@ -74,12 +77,12 @@
                 <li><a href="revyoversikt.html">Revyoversikt</a></li>
                 <li><a href="Revystyret.html">Revystyret</a></li>
                 <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
-                <li>_______</li>
-                <li class="logged-out"><a href="#" onclick="toggle('login')">Logg inn</a></li>
-                <li class="logged-out"><a href="#" onclick="toggle('signup')">Lag ny konto</a></li>
-                <li class="logged-in"><a href="#" onclick="toggle('account')">Min konto</a></li>
+                <li>______________</li>
+                <li class="logged-out"><a onclick="toggle('login')">Logg inn</a></li>
+                <li class="logged-out"><a onclick="toggle('signup')">Lag ny konto</a></li>
+                <li class="logged-in"><a onclick="toggle('account')">Min konto</a></li>
                 <li class="logged-in"><a class="logout">Logg ut</a></li>
-                <li class="logged-in"><a href="#">Lag innlegg</a></li>
+                <li class="admin"><a href="laginnlegg.html">Lag innlegg</a></li>
             </ul>
         </div>
     </div>
@@ -107,7 +110,7 @@
     <ul class="account-nav">
         <li class="logged-in"><a onclick="toggle('account')">Konto</a></li>
         <li class="logged-in"><a class="logout">Logg ut</a></li>
-        <li class="logged-in"><a href="laginnlegg.html">Lag innlegg</a></li>
+        <li class="admin"><a href="laginnlegg.html">Lag innlegg</a></li>
         <li class="logged-in left"><a onclick="toggle('account')" id="loginStatus"></a></li>
         <li class="logged-out"><a onclick="toggle('signup')">Lag konto</a></li>
         <li class="logged-out"><a onclick="toggle('login')">Logg inn</a></li>
@@ -158,12 +161,12 @@
             <li><a  href="MeldDegPa.html">Meld deg på!</a></li>
             <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
             <li><a href="Revystyret.html">Revystyret</a></li>
-            <li> ____</li>
-            <li class="logged-out"><a href="#" onclick="toggle('login')">Logg inn</a></li>
-            <li class="logged-out"><a href="#" onclick="toggle('signup')">Lag ny konto</a></li>
-            <li class="logged-in"><a href="#" onclick="toggle('account')">Min konto</a></li>
-            <li class="logged-in"><a href="#" class="logout">Logg ut</a></li>
-            <li class="logged-in"><a href="#">Lag innlegg</a></li>
+            <li> ______________</li>
+            <li class="logged-out"><a onclick="toggle('login')">Logg inn</a></li>
+            <li class="logged-out"><a onclick="toggle('signup')">Lag ny konto</a></li>
+            <li class="logged-in"><a onclick="toggle('account')">Min konto</a></li>
+            <li class="logged-in"><a class="logout">Logg ut</a></li>
+            <li class="admin"><a href="laginnlegg.html">Lag innlegg</a></li>
         </ul>
         <ul id="footer-right"> <!--Linker til diverse SoMe, javascript importert i head bruker classene under og setter inn ikoner. -->
             <li><a href="https://www.facebook.com/Stormrevyen/" title="Facebook/Stormrevyen" target="blank"><i class='fab fa-facebook-square'></i> Stormrevyen</a></li>
