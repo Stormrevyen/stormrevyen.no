@@ -39,22 +39,27 @@
         </div>
     </div>
 
-    <script>
-        var navstate = 0;
+    <script> 
+    //TODO FIKS KODEN!
+        console.log(document.getElementById("sidenav").style.width) = "0px";
         function toggleNav() {
-            if(navstate == 1){
+            var navwidth = document.getElementById("sidenav").style.width;
+            if(navwidth == "0px"){ //toggle on
                 if(window.innerWidth > 700){
                     document.getElementById("sidenav").style.width = "40%";
+                    console.log("1");
                 }else{
                     document.getElementById("sidenav").style.width = "100%";
+                    console.log("2");
                 }
                 document.getElementById("sidenavbuttonIcon").className = "fas fa-times";
-                navstate = 0;
-            }else if(navstate == 0){
+                console.log("3");
+            }else{ //toggle off
                 document.getElementById("sidenav").style.width = "0";
                 document.getElementById("sidenavbuttonIcon").className = "fas fa-bars";
-                navstate = 1;
+                console.log("4");
             }
+            console.log("5");
         }
     </script>
   
@@ -66,6 +71,23 @@
         <div class="scroll-prompt" id="js_scrollPrompt"><div class="scroll-prompt-shape"></div></div>
     </div>
     <div id="helesiden"> 
+        <ul class="account-nav">
+            <li class="logged-in">
+                <a href="#" class="popup-trigger" onclick="toggleAccount()">Konto</a>
+            </li>
+            <li class="logged-in">
+                <a href="#" id="logout">Logg ut</a>
+            </li>
+            <li class="logged-in">
+                <a href="#">Lag innlegg</a>
+            </li>
+            <li class="logged-out">
+                <a href="#" class="popup-trigger" onclick="toggleSignup()">Lag konto</a>
+            </li>
+            <li class="logged-out">
+                <a href="#" class="popup-trigger" onclick="toggleLogin()">Logg inn</a>
+            </li>
+        </ul>
         <header id="header" class="scrollHeader">
             <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
             <a href="index.html" id="hovedtittel">STORMREVYEN</a>
@@ -107,27 +129,27 @@
             <!--Stor link--><a href="https://docs.google.com/document/d/17udSwbo8qQrLtdrpb1C8LWtQZedPkvspuELDALZ_bVc/edit?fbclid=IwAR0VD37ZvPNXC_Njg9doPQXtiEe-1ysERN24YWCQuOxGcl86lUYlf4MoKjs" target="blank"><h1>Medlemsliste og generell info 2020 <i class='fas fa-arrow-right'></i></h1></a>
             <!--Dato og forfatter av innlegget--><h6>17. Oktober 2020 15:47  -   Anders Garberg</h6>
         </div>
-
-        <div class="content">
-            <h2>Påmeldinga er nå lukket</h2>
-            <h3>Takk til alle som meldte seg på!</h3>
-            <h6>10. Oktober 2020 10:13  -   Anders Garberg</h6>
-        </div>
-
-        <div class="content"> 
-            <h2>Påmeldinga er åpen!</h2>
-            <a href="MeldDegPa.html"><h1>Info om påmelding <i class='fas fa-arrow-right'></i></h1></a> 
-            <h6>5. Oktober 2020 08:07  -   Anders Garberg</h6>
-        </div>
+        <ul id="feed">
+            <li><div class="content">
+                <h2>Påmeldinga er nå lukket</h2>
+                <h3>Takk til alle som meldte seg på!</h3>
+                <h6>10. Oktober 2020 10:13  -   Anders Garberg</h6>
+            </div></li>
     
-        <div class="content">
-            <h2>Årets promovideo</h2>
-            <iframe
-                src="https://www.youtube.com/embed/H5czhH0EZLA" frameborder="0" allowfullscreen="">
-            </iframe>
-            <h6>2. Oktober 2020 22:13   -   Anders Garberg</h6>
-        </div>
-
+            <li><div class="content"> 
+                <h2>Påmeldinga er åpen!</h2>
+                <a href="MeldDegPa.html"><h1>Info om påmelding <i class='fas fa-arrow-right'></i></h1></a> 
+                <h6>5. Oktober 2020 08:07  -   Anders Garberg</h6>
+            </div></li>
+        
+            <li><div class="content">
+                <h2>Årets promovideo</h2>
+                <iframe
+                    src="https://www.youtube.com/embed/H5czhH0EZLA" frameborder="0" allowfullscreen="">
+                </iframe>
+                <h6>2. Oktober 2020 22:13   -   Anders Garberg</h6>
+            </div></li>
+        </ul>
     </div> 
 
     <footer> <!--Felles footer for alle sider-->

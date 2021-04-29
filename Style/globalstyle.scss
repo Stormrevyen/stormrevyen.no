@@ -72,7 +72,7 @@ body {
 
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 0px;
   position: fixed;
   z-index: 6;
   top: 0;
@@ -113,7 +113,7 @@ body {
 /*  - Header -    */
 
 header {
-  padding: 3vh 1vw;
+  padding: 17px 9px;
   @include screen-xs {
     padding: 1vh 1vw;
   }
@@ -232,8 +232,8 @@ header {
 
     .active {
       /* Setter farge på knapp hvis siden er aktiv*/
-      background-color: #47c2a9;
-      border-bottom: 3px solid #f7d15a;
+      background-color: $SRbla;
+      border-bottom: 3px solid $SRgul;
     }
     @include screen-m {
       &:not(.mobile) {
@@ -257,7 +257,129 @@ header {
     }*/
 }
 
-/*  - Content -  */
+//** AUTH -----------------------------------------------------
+
+.account-nav {
+  position: static;
+  background-color: $SRgul;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  @include screen-m {
+    display: none;
+  }
+  li {
+    list-style-type: none;
+    float: right;
+    display: inline-block;
+    margin: 0.5vh 0.5vw;
+    a {
+      color: $SRrod;
+      text-decoration: none;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .logged-in,
+  .logged-out {
+    display: none;
+  }
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  width: 40%;
+  @include screen-s {
+    width: 90%;
+    left: 1%;
+  }
+  height: fit-content;
+  top: 30%;
+  left: 25%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 8px 14px 38px rgba(0, 0, 0, 0.596);
+  padding: 2vh 4vw;
+  h2 {
+    color: $SRrod;
+  }
+  input {
+    color: $SRbla;
+    border: 4px solid $SRbla;
+    width: 80%;
+    height: 4vh;
+    margin: 1vh 2vw;
+    padding-left: 45px;
+    border-radius: 30px;
+    &::placeholder {
+      color: $SRbla;
+      font-weight: bold;
+    }
+    &[type="email"] {
+      background-image: url(../Media/envelope-regular.svg);
+      -webkit-backdrop-filter: $SRbla;
+      background-repeat: no-repeat;
+      background-position: 5px 5px;
+      background-size: 4vh;
+    }
+    &:focus {
+      border: 3px solid white;
+      transition: 0.5s;
+    }
+  }
+  button {
+    background-color: $SRbla;
+    color: white;
+    font-weight: bold;
+    margin: 1vh 2vw;
+    border: none;
+    padding: 1vh 2vw;
+    border-radius: 30px;
+    &:hover {
+      background-color: $SRrod;
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    &:hover,
+    &:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  a {
+    float: right;
+    font-size: 2em;
+    color: $SRrod;
+    &:hover {
+      color: $SRbla;
+    }
+  }
+}
+
+//** CONTENT --------------------------------------------------
+#feed {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
 
 .content {
   width: 80%;
@@ -376,7 +498,7 @@ p {
   }
 }
 
-/*  - Footer -  */
+//** FOOTER ---------------------------------------------------
 
 footer {
   display: grid;

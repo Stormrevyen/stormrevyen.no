@@ -21,9 +21,7 @@
             <h2>Lag en konto</h2>
             <form action="" id="signup-form">
                 <input type="email" id="signup-email" placeholder="Epost" required/>
-                <input type="text" id="signup-displayname" placeholder="Fullt navn" required>
                 <input type="password" id="signup-password" placeholder="Nytt passord" required/>
-                <input type="text" id="signup-bio" placeholder="Biografi">
                 <button>Lag ny konto</button>
             </form>
         </div>
@@ -48,11 +46,15 @@
             <a onclick="toggle('account')"><i class="fas fa-times"></i></a>
             <h2>Kontodetaljer</h2>
             <ul class="account-details">
+                <li>Epost: <string id="user-email"></string></li>
+                <li>Visningsnavn: <string id="user-displayname"></string></li>
+                <li>Medlem: <string id="user-member"></string></li>
+                <li>Gruppetildeling: <string id="user-group"></string></li>
             </ul>
         </div>
     </div>
 
-    <div id="popup-accountChange" class="popup">
+    <div id="popup-account" class="popup">
         <div class="popup-content">
             <a onclick="toggle('account')"><i class="fas fa-times"></i></a>
             <h4>Endre dine kontodetaljer</h4>
@@ -102,11 +104,21 @@
 
     <div id="helesiden">
     <ul class="account-nav">
-        <li class="logged-in"><a href="#" class="popup-trigger" onclick="toggle('account')">Konto</a></li>
-        <li class="logged-in"><a href="#" id="logout">Logg ut</a></li>
-        <li class="logged-in"><a href="#">Lag innlegg</a></li>
-        <li class="logged-out"><a href="#" class="popup-trigger" onclick="toggle('signup')">Lag konto</a></li>
-        <li class="logged-out"><a href="#" class="popup-trigger" onclick="toggle('login')">Logg inn</a></li>
+        <li class="logged-in">
+            <a href="#" class="popup-trigger" onclick="toggle('account')">Konto</a>
+        </li>
+        <li class="logged-in">
+            <a href="#" id="logout">Logg ut</a>
+        </li>
+        <li class="logged-in">
+            <a href="#">Lag innlegg</a>
+        </li>
+        <li class="logged-out">
+            <a href="#" class="popup-trigger" onclick="toggle('signup')">Lag konto</a>
+        </li>
+        <li class="logged-out">
+            <a href="#" class="popup-trigger" onclick="toggle('login')">Logg inn</a>
+        </li>
     </ul>
     <script>
         function toggle(item){
@@ -144,7 +156,14 @@
        }
    </script>
 
-    <ul id="feed"></ul>
+    <form id="create-form">
+        <input type="text" id="title" placeholder="Tittel" required>
+        <input type="text" id="content" placeholder="Innhold...">
+        <input type="url" id="image" placeholder="Bildelink (få Anders til å laste opp)">
+        <input type="url" id="youtube" placeholder="Link til YT-video for innebygging">
+        <input type="text" id="author" placeholder="Forfatter" required>
+        <button>Publiser</button>
+    </form>
 
 
     <footer> <!--Felles footer for alle sider-->
@@ -158,7 +177,7 @@
             <li class="logged-out"><a href="#" onclick="toggle('signup')">Lag ny konto</a></li>
             <li class="logged-in"><a href="#" onclick="toggle('account')">Min konto</a></li>
             <li class="logged-in"><a href="#" class="logout">Logg ut</a></li>
-            <li class="logged-in"><a href="#">Lag innlegg</a></li>
+            <li class="logged-in"><a href="laginnlegg.html">Lag innlegg</a></li>
         </ul>
         <ul id="footer-right"> <!--Linker til diverse SoMe, javascript importert i head bruker classene under og setter inn ikoner. -->
             <li><a href="https://www.facebook.com/Stormrevyen/" title="Facebook/Stormrevyen" target="blank"><i class='fab fa-facebook-square'></i> Stormrevyen</a></li>
@@ -174,7 +193,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
-<!--<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-functions.js"></script>-->
 <script>
   var firebaseConfig = {
     apiKey: "AIzaSyCK1DO9SBLds5LbFHpC-fFW3xrVPgwZb3E",
@@ -187,11 +205,10 @@
   // auth and firestore references
   const auth = firebase.auth();
   const db = firebase.firestore();
-  //const functions = firebase.functions();
   // update firestore settings
   db.settings({ timestampsInSnapshots: true});
 </script>
 <script src="Scripts/auth.js"></script>
-<script src="Scripts/index.js"></script>
+<script src="Scripts/createpost.js"></script>
 
 </html>

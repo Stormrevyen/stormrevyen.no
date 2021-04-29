@@ -57,11 +57,9 @@
     </header>
 
         <script>
-             window.onscroll = function() {scrollFunction()};
+            window.onscroll = function() {scrollFunction()};
             function scrollFunction() {
-                if (window.innerWidth < 1000){
-                    document.getElementById("header").style.backgroundColor = "#E98051";
-                }else if (document.documentElement.scrollTop > window.innerHeight) { 
+            if (document.documentElement.scrollTop > 0) { 
                 document.getElementById("header").style.backgroundColor = "#E98051";} 
                 else {document.getElementById("header").style.backgroundColor = "unset";}
             }
