@@ -68,6 +68,15 @@
         </div>
     </div>
 
+    <!--Error-->
+    <div id="popup-error" class="popup">
+        <div class="popup-content">
+            <a onclick="toggle('error')"><i class="fas fa-times"></i></a>
+            <h2>Feilmelding</h2>
+            <p id="error-message"></p>
+        </div>
+    </div>
+
     <div class="sidenavcontainer">
         <a class="mobile sidenavbutton active" onclick="toggleNav()"><i id="sidenavbuttonIcon"class="fas fa-bars"></i></a>
         <div id="sidenav" class="sidenav">
@@ -132,6 +141,7 @@
                     document.getElementById('popup-account').style.display = 'none';
                     document.getElementById('popup-message').style.display = 'none';
                     document.getElementById('popup-signup').style.display = 'none';
+                    document.getElementById('popup-error').style.display = 'none';
                     popup.style.display = 'block';
                 }
             }
@@ -171,32 +181,18 @@
         </script>
 
         <!--En slags feed med "opptateringer" fra styret:-->
-        <div class="content">
-            <!--Tittel--><h2>Medlemslistan e ut!</h2> 
-            <!--Undertittel--><h3>Se om du fikk plass på årets revy</h3>
-            <!--Stor link--><a href="https://docs.google.com/document/d/17udSwbo8qQrLtdrpb1C8LWtQZedPkvspuELDALZ_bVc/edit?fbclid=IwAR0VD37ZvPNXC_Njg9doPQXtiEe-1ysERN24YWCQuOxGcl86lUYlf4MoKjs" target="blank"><h1>Medlemsliste og generell info 2020 <i class='fas fa-arrow-right'></i></h1></a>
-            <!--Dato og forfatter av innlegget--><h6>17. Oktober 2020 15:47  -   Anders Garberg</h6>
-        </div>
         <ul id="feed"></ul>
         <ul id="feed">
             <li><div class="content">
-                <h2>Påmeldinga er nå lukket</h2>
+            <h2>Påmeldingen er nå stengt</h2>
                 <h3>Takk til alle som meldte seg på!</h3>
                 <h6>10. Oktober 2020 10:13  -   Anders Garberg</h6>
             </div></li>
     
             <li><div class="content"> 
-                <h2>Påmeldinga er åpen!</h2>
+                <h2>Påmeldingen er åpen!</h2>
                 <a href="MeldDegPa.html"><h1>Info om påmelding <i class='fas fa-arrow-right'></i></h1></a> 
                 <h6>5. Oktober 2020 08:07  -   Anders Garberg</h6>
-            </div></li>
-        
-            <li><div class="content">
-                <h2>Årets promovideo</h2>
-                <iframe
-                    src="https://www.youtube.com/embed/H5czhH0EZLA" frameborder="0" allowfullscreen="">
-                </iframe>
-                <h6>2. Oktober 2020 22:13   -   Anders Garberg</h6>
             </div></li>
         </ul>
     </div> 

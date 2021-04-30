@@ -16,6 +16,8 @@ createForm.addEventListener('submit', (e) => {
         title: createForm['title'].value,
         content: createForm['content'].value,
         image: createForm['image'].value,
+        linkDir: createForm['linkDir'].value,
+        linkTitle: createForm['linkTitle'].value,
         youtube: createForm['youtube'].value,
         author: createForm['author'].value,
         timestamp: formattedTime,

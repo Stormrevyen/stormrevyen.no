@@ -575,6 +575,11 @@ header a {
   }
 }
 
+.content img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
 h1 {
   margin: 1vw;
   font-family: acumin-pro, sans-serif;
@@ -632,6 +637,10 @@ p {
   margin: 0;
   font-family: acumin-pro, sans-serif;
   font-weight: 100;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 .imgContent {

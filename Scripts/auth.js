@@ -87,6 +87,10 @@ signupForm.addEventListener('submit', (e) => {
     }).then(() => {
         document.getElementById('popup-signup').style.display = 'none';
         signupForm.reset();
+    }).catch(err => {
+        console.log(err.message);
+        document.getElementById('error-message').innerHTML = err.message;
+        toggle('error');
     });
 });
 
@@ -95,7 +99,11 @@ const logout = document.querySelectorAll('.logout').forEach(item => {
     item.addEventListener('click', (e) => {
         e.preventDefault();
         auth.signOut();
-    });
+    })/*.catch(err => { //TODO FUNGERER IKKE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        console.log(err.message);
+        document.getElementById('error-message').innerHTML = err.message;
+        toggle('error');
+    })*/;
 });
 
 //** Login
@@ -111,7 +119,11 @@ loginForm.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password).then(cred => {
         document.getElementById('popup-login').style.display = 'none';
         loginForm.reset();
-    });
+    })/*.then().catch(err => { //TODO FUNGERER IKKE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        console.log(err.message);
+        document.getElementById('error-message').innerHTML = err.message;
+        toggle('error');
+    })*/;
 });
 
 //** Message
@@ -137,9 +149,11 @@ const sendMessage = (user) => {
             }).then(() => {
                 document.getElementById('popup-message').style.display = 'none';
                 messageForm.reset();
-            }).catch(err => {
+            })/*.catch(err => { //TODO FUNGERER IKKE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 console.log(err.message);
-            });
+                document.getElementById('error-message').innerHTML = err.message;
+                toggle('error');
+            })*/;
         });
     }else{
         console.log("Du må logge inn for å sende melding.")

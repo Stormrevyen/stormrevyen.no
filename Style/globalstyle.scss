@@ -467,6 +467,10 @@ header {
   @include screen-m {
     width: 96%;
   }
+  img {
+    max-width: 100%;
+    overflow: hidden;
+  }
 }
 
 h1 {
@@ -517,6 +521,12 @@ p {
   margin: 0;
   font-family: acumin-pro, sans-serif;
   font-weight: 100;
+}
+
+a {
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .imgContent {
