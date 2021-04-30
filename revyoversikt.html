@@ -66,6 +66,15 @@
             <i>Svar kommer på epost innen 2-3 virkedager.</i>
         </div>
     </div>
+
+    <!--Error-->
+    <div id="popup-error" class="popup">
+        <div class="popup-content">
+            <a onclick="toggle('error')"><i class="fas fa-times"></i></a>
+            <h2>Feilmelding</h2>
+            <p id="error-message"></p>
+        </div>
+    </div>
     
     <div class="sidenavcontainer">
         <a class="mobile sidenavbutton active" onclick="toggleNav()"><i id="sidenavbuttonIcon"class="fas fa-bars"></i></a>
@@ -123,6 +132,7 @@
                     document.getElementById('popup-account').style.display = 'none';
                     document.getElementById('popup-message').style.display = 'none';
                     document.getElementById('popup-signup').style.display = 'none';
+                    document.getElementById('popup-error').style.display = 'none';
                     popup.style.display = 'block';
                 }
             }
