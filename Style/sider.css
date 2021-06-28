@@ -1,4 +1,9 @@
 @charset "UTF-8";
+#SR2022 {
+  --color1: white;
+  --color2: black;
+}
+
 #Skjegget-i-postkassa {
   --color1: #46378a;
   /* --color1 = Bakgrunnsfarge */
@@ -77,7 +82,7 @@
   display: block;
   /* Plasserer knappen i midten av div element, over bildet. > */
   position: relative;
-  top: -300px;
+  top: -250px;
   /* < */
   z-index: 4;
   width: 30%;
@@ -121,6 +126,9 @@ header.orange {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   padding: 0 0 2vw 0;
   z-index: auto;
@@ -160,8 +168,6 @@ header.orange {
   height: fit-content;
   font-family: acumin-pro-condensed, sans-serif;
   font-weight: 800;
-  display: block;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   margin: 2px;
@@ -171,6 +177,34 @@ header.orange {
 }
 
 .revy-spotlight .revyBanner .tilbakeknapp:hover {
+  background-color: var(--color1);
+  color: var(--color2);
+}
+
+.revy-spotlight .revyBanner .styreknapp {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 4 / 2 / 5;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-family: acumin-pro-condensed, sans-serif;
+  font-weight: 800;
+  justify-self: flex-end;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin: 2px;
+  background-color: var(--color2);
+  color: var(--color1);
+  border-radius: 12px;
+}
+
+.revy-spotlight .revyBanner .styreknapp:hover {
   background-color: var(--color1);
   color: var(--color2);
 }
@@ -211,6 +245,47 @@ header.orange {
 }
 
 /*      /revystyret.html:   */
+#styrenav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#styrenav a {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: center;
+  border-radius: 12px;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bolder;
+  line-height: 25px;
+  font-family: acumin-pro, sans-serif;
+  color: var(--color1);
+  background-color: var(--color2);
+  margin: 1vh 1vw;
+}
+
+@media screen and (max-width: 570px) {
+  #styrenav a {
+    font-size: 1em;
+    padding: 5px;
+  }
+}
+
+#styrenav a:hover, #styrenav a.active {
+  color: var(--color2);
+  border: var(--color2) 2px solid;
+  background-color: var(--color1);
+}
+
 #roller {
   /* Definerer flexbox vertikalt og lager dermed linjer til hvert lederpar*/
   display: -webkit-box;
@@ -228,6 +303,13 @@ header.orange {
   display: flex;
   /* Definerer flexbox hørisontalt og fordeler elementer i hver linje*/
   width: 100%;
+  font-size: 1.4em;
+}
+
+@media screen and (max-width: 700px) {
+  #roller div {
+    font-size: 1em;
+  }
 }
 
 #roller div img {
@@ -235,9 +317,15 @@ header.orange {
   margin: auto 1vw;
   justify-self: flex-end;
   /* Flytter bildene til høyre i raden.*/
-  height: 10vw;
+  height: 30vh;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (max-width: 700px) {
+  #roller div img {
+    height: 20vh;
+  }
 }
 
 #roller > div:nth-child(odd) {
@@ -249,5 +337,6 @@ header.orange {
   display: block;
   /* Samler all teksten hver rad til ett block element, blir enklere å håndtere i flexbox.*/
   margin: 0 1vw;
+  padding: 0;
 }
 /*# sourceMappingURL=sider.css.map */

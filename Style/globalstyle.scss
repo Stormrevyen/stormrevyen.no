@@ -460,7 +460,6 @@ header {
   }
   h4,
   a {
-    padding: 1vw;
     color: #ed89a5;
     text-decoration: none;
   }
@@ -477,9 +476,9 @@ h1 {
   margin: 1vw;
   font-family: acumin-pro, sans-serif;
   font-weight: 800;
-  font-size: 3em;
+  font-size: 2em;
   @include screen-s {
-    font-size: 2em;
+    font-size: 1.7em;
   }
 }
 
@@ -526,6 +525,7 @@ p {
 a {
   &:hover {
     cursor: pointer;
+    text-decoration: underline;
   }
 }
 

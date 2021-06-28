@@ -1,4 +1,14 @@
+$SRbla: #47c2a9;
+$SRrod: #ca3f44;
+$SRorange: #e98051;
+$SRgul: #f7d15a;
+
 //** Definerer fargekombinasjonen til logoen fra hver revy som variabler, brukt i hver av spotlight-sidene og TidligereRevyer.html
+#SR2022 {
+  --color1: white;
+  --color2: black;
+}
+
 #Skjegget-i-postkassa {
   --color1: #46378a; /* --color1 = Bakgrunnsfarge */
   --color2: #fdc300; /* --color2 = Forgrunnsfagre */
@@ -22,6 +32,25 @@
 #I-vinden {
   --color1: #93ddde;
   --color2: #ff3a0e;
+}
+
+@mixin screen-m {
+  @media screen and (max-width: 1000px) {
+    //** HUSK Å ENDRE DETTE I index.scss OG JAVASCRIPT
+    @content;
+  }
+}
+
+@mixin screen-s {
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin screen-xs {
+  @media screen and (max-width: 570px) {
+    @content;
+  }
 }
 
 //**      /revyoversikt.html:
@@ -63,7 +92,7 @@
 .revyButton {
   display: block; /* Plasserer knappen i midten av div element, over bildet. > */
   position: relative;
-  top: -300px; /* < */
+  top: -250px; /* < */
   z-index: 4;
   width: 30%;
   margin: auto;
@@ -100,6 +129,7 @@ header.orange {
   color: var(--color2);
   //display: flex;
   flex-flow: column;
+  display: flex;
   width: 100%;
   padding: 0 0 2vw 0;
   z-index: auto;
@@ -120,8 +150,24 @@ header.orange {
       height: fit-content;
       font-family: acumin-pro-condensed, sans-serif;
       font-weight: 800;
-      display: block;
-      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      margin: 2px;
+      background-color: var(--color2);
+      color: var(--color1);
+      border-radius: 12px;
+      &:hover {
+        background-color: var(--color1);
+        color: var(--color2);
+      }
+    }
+    .styreknapp {
+      grid-area: 1 / 4 / 2 / 5;
+      width: fit-content;
+      height: fit-content;
+      font-family: acumin-pro-condensed, sans-serif;
+      font-weight: 800;
+      justify-self: flex-end;
       padding: 14px 16px;
       text-decoration: none;
       margin: 2px;
@@ -170,6 +216,35 @@ header.orange {
 }
 
 /*      /revystyret.html:   */
+#styrenav {
+  display: flex;
+  a {
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    text-align: center;
+    border-radius: 12px;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bolder;
+    line-height: 25px;
+    font-family: acumin-pro, sans-serif;
+    color: var(--color1);
+    background-color: var(--color2);
+    margin: 1vh 1vw;
+    @include screen-xs() {
+      font-size: 1em;
+      padding: 5px;
+    }
+    &:hover,
+    &.active {
+      color: var(--color2);
+      border: var(--color2) 2px solid;
+      background-color: var(--color1);
+    }
+  }
+}
 #roller {
   /* Definerer flexbox vertikalt og lager dermed linjer til hvert lederpar*/
   display: flex;
@@ -177,12 +252,19 @@ header.orange {
   div {
     display: flex; /* Definerer flexbox hørisontalt og fordeler elementer i hver linje*/
     width: 100%;
+    font-size: 1.4em;
+    @include screen-s() {
+      font-size: 1em;
+    }
     img {
       border-radius: 12px;
       margin: auto 1vw;
       justify-self: flex-end; /* Flytter bildene til høyre i raden.*/
-      height: 10vw;
+      height: 30vh;
       object-fit: cover;
+      @include screen-s() {
+        height: 20vh;
+      }
     }
   }
   & > div:nth-child(odd) {
@@ -192,5 +274,6 @@ header.orange {
   .rolletekst {
     display: block; /* Samler all teksten hver rad til ett block element, blir enklere å håndtere i flexbox.*/
     margin: 0 1vw;
+    padding: 0;
   }
 }

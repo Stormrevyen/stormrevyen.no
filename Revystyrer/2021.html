@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/globalstyle.css">
-    <link rel="stylesheet" href="Style/sider.css">
+    <link rel="stylesheet" href="../Style/globalstyle.css">
+    <link rel="stylesheet" href="../Style/sider.css">
     <script src="https://kit.fontawesome.com/fd6a2e0274.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="Media/Logo Stormrevyen mølle.svg">
-    <title>Revyoversikt | STORMREVYEN</title>
+    <link rel="icon" href="../Media/Logo Stormrevyen mølle.svg">
+    <title>Styret 2021 | STORMREVYEN</title>
 </head>
 <body>
     <!--** POPUPS-->
@@ -81,19 +81,19 @@
         <div id="sidenav" class="sidenav">
             <ul>
                 <li><a href="https://stormrevyen.shop/billetter" target=blank>Kjøp billetter</a></li>
-                <li><a href="revyoversikt.html">Revyoversikt</a></li>
-                <li><a href="Revystyret.html">Revystyret</a></li>
-                <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
+                <li><a href="../revyoversikt.html">Revyoversikt</a></li>
+                <li><a href="../Revystyret.html">Revystyret</a></li>
+                <li><a href="../https://stormrevyen.shop" target="blank">SR Shop</a></li>
                 <li>______________</li>
                 <li class="logged-out"><a onclick="toggle('login')">Logg inn</a></li>
                 <li class="logged-out"><a onclick="toggle('signup')">Lag ny konto</a></li>
                 <li class="logged-in"><a onclick="toggle('account')">Min konto</a></li>
                 <li class="logged-in"><a class="logout">Logg ut</a></li>
-                <li class="admin"><a href="laginnlegg.html">Lag innlegg</a></li>
+                <li class="admin"><a href="../laginnlegg.html">Lag innlegg</a></li>
             </ul>
         </div>
     </div>
-
+    
     <script>
         var navstate = 0;
         function toggleNav() {
@@ -113,11 +113,11 @@
         }
     </script>
 
-    <div id="helesiden" class="scrollHeader">
+    <div id="helesiden">
         <ul class="account-nav">
             <li class="logged-in"><a onclick="toggle('account')">Konto</a></li>
             <li class="logged-in"><a class="logout">Logg ut</a></li>
-            <li class="admin"><a href="laginnlegg.html">Lag innlegg</a></li>
+            <li class="admin"><a href="../laginnlegg.html">Lag innlegg</a></li>
             <li class="logged-in left"><a onclick="toggle('account')" id="loginStatus"></a></li>
             <li class="logged-out"><a onclick="toggle('signup')">Lag konto</a></li>
             <li class="logged-out"><a onclick="toggle('login')">Logg inn</a></li>
@@ -138,67 +138,139 @@
             }
         </script>
 
-        <!--Felles header for alle sider-->
-        <header id="header">
-        <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
-        <a href="index.html" id="hovedtittel">STORMREVYEN</a>
+    <!--Felles header for alle sider-->
+    <header id="header">
+        <a href="../index.html" id="hovedlogo"><img src='../Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
+        <a href="../index.html" id="hovedtittel">STORMREVYEN</a>
         <ul class="toppmeny">
             <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
             <!--<li><a href="MeldDegPa.html">Meld deg på!</a></li>-->
             <li><a href="https://stormrevyen.shop/billetter" target=blank>Kjøp billetter</a></li>
-            <li><a href="revyoversikt.html" class="active">Revyoversikt</a></li>
-            <li><a href="Revystyret.html">Revystyret</a></li>
+            <li><a href="../revyoversikt.html">Revyoversikt</a></li>
+            <li><a href="../Revystyret.html" class="active">Revystyret</a></li>
             <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
         </ul>
     </header>
 
-        <script>
-            window.onscroll = function() {scrollFunction()};
-            function scrollFunction() {
-            if (document.documentElement.scrollTop > 0) { 
-                document.getElementById("header").style.backgroundColor = "#E98051";} 
-                else {document.getElementById("header").style.backgroundColor = "unset";}
-            }
-        </script>
+    <!--Javascript, endrer headers bakgrunnsfarge når man scroller: Hvis toppen av siden er mer enn 600px over, endre bakgrunnsfarge på header.        -->
+    <script>
+         window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+        if (document.documentElement.scrollTop > 0) { 
+            document.getElementById("header").style.backgroundColor = "#E98051";} 
+            else {document.getElementById("header").style.backgroundColor = "unset";}
+        }
+    </script>
+    <div class="content">
+        <div id="styrenav">
+            <a href="../Revystyret.html" id="2022">2022</a>
+            <a href="2021.html" id="Skjegget-i-postkassa"class="active">2021</a>
+            <a href="2020.html" id="Abort-mission">2020</a>
+            <a href="2019.html" id="Throwback">2019</a>
+            <a href="2018.html" id="Shitstorm">2018</a>
+            <a href="2017.html" id="I-vinden">2017</a>
+        </div>
+    </div>
 
-        <div id="revyoversikt">
-            <div class="revyItem" id="SR2022">
-                <h2>2022</h2>
-                <img src="Media/revyer/SR2022.jpg" alt="SR2022" class="revyicon">
-                <!--<a href="Revyer/skjegget-i-postkassa.html" class="revyButton"><h3>Kommer snart!</h3></a>-->
-            </div>
+    <div class="imgContent">
+        <img id="bildeStyret" src="../Media/revystyret2021/revystyret.jpg" alt="Styret i stormrevyen">
+    </div>
 
-            <div class="revyItem" id="Skjegget-i-postkassa">
-                <h2>2021</h2>
-                <img src="Media/revyer/SkjeggetIPostkassa_Square.jpg" alt="Skjegget-I-Postkassa" class="revyicon">
-                <a href="Revyer/skjegget-i-postkassa.html" class="revyButton"><h3>Se mer</h3></a>
-            </div>
+    <div class="content" id="roller">
+        <h2>Revystyret 2021</h2>
 
-            <div class="revyItem" id="Abort-mission">
-                <h2>2020</h2>
-                <img src="Media/revyer/Abort-Mission.jpg" alt="Abort-Mission" class="revyicon">
-                <a href="Revyer/abort-mission.html" class="revyButton"><h3>Se mer</h3></a>
+        <div class="gray">
+            <div class="rolletekst">
+                <h3>Revysjefene</h3>
+                <p><b>Rebekka Buhaug Sjaastad</b> og <br><b>Lotta Meslo</b></p>
             </div>
-
-            <div class="revyItem" id="Throwback"> 
-                <h2>2019</h2>
-                <img src="Media/revyer/Throwback.jpg" alt="Throwback" class="revyicon">
-                <a href="Revyer/throwback.html" class="revyButton"><h3>Se mer</h3></a>
-            </div>
-
-            <div class="revyItem" id="Shitstorm"> 
-                <h2>2018</h2>
-                <img src="Media/revyer/Shitstorm.jpg" alt="Shitstorm" class="revyicon">
-                <a href="Revyer/shitstorm.html" class="revyButton"><h3>Se mer</h3></a>
-            </div>
-
-            <div class="revyItem" id="I-vinden"> 
-                <h2>2017</h2>
-                <img src="Media/revyer/Ivinden.jpg" alt="I-vinden" class="revyicon">
-                <a href="Revyer/i-vinden.html" class="revyButton"><h3>Se mer</h3></a>
-            </div>
+            <img src="../Media/revystyret2021/lottaogrebekka.jpg" alt="Lotta og Rebekka">
         </div>
 
+        <div>
+            <div class="rolletekst">
+                <h3>Økonomisjef og Inspisient</h3>
+                <p><b>Andreas Ødegård</b> og <br><b>Eline Rognes</b></p>
+            </div>
+            <img src="../Media/revystyret2021/andreasogeline.jpg" alt="Andreas og Eline">
+        </div>
+
+        <div>
+            <div class="rolletekst">
+                <h3>Bandsjefene</h3>
+                <p><b>Anders Garberg</b> og <br><b>Oskar Larsen</b></p>
+            </div>
+            <img src="../Media/revystyret2021/andersogoskar.jpg" alt="Anders og Oskar">
+        </div>
+
+        <div>
+            <div class="rolletekst">
+                <h3>Dansesjefene</h3>
+                <p><b>Tora Holm</b> og <br><b>Angelica Meland</b></p>
+            </div>
+            <img src="../Media/revystyret2021/toraogangelica.jpg" alt="Tora og Angelica">
+        </div>
+
+        <div>
+            <div class="rolletekst">
+                <h3>Skuespillsjefene</h3>
+                <p><b>Henrikke Skikstein</b> og <br><b>Emma Riiber</b></p>
+            </div>
+            <img src="../Media/revystyret2021/emmaoghenrikke.jpg" alt="Emma og Henrikke">
+        </div>
+
+        <div>
+            <div class="rolletekst">
+                <h3>Tekstsjefene</h3>
+                <p><b>Emma Usterud</b> og <br><b>Ingrid Olaussen</b></p>
+            </div>
+            <img src="../Media/revystyret2021/ingridogemma.jpg" alt="Emma og Ingrid">
+        </div>
+
+        <div>
+            <div class="rolletekst">
+                <h3>Lyd&Lys-sjef</h3>
+                <p><b>Petter Haave</b></p>
+            </div>
+            <img src="../Media/revystyret2021/petter.jpg" alt="Petter">
+        </div>
+
+        <div>
+            <div class="rolletekst">
+                <h3>Sminke- og kostymesjef</h3>
+                <p><b>Fatima Ali</b></p>
+            </div>
+            <img src="../Media/revystyret2021/fatima.jpg" alt="Fatima">
+        </div>
+
+        <div>
+            <div class="rolletekst">
+                <h3>Scenesjef</h3>
+                <p><b>Eivind Thue Gabrielsen</b></p>
+            </div>
+            <img src="../Media/revystyret2021/eivind.jpg" alt="Eivind">
+        </div>
+
+        <div>
+            <div class="rolletekst">
+                <h3>PR-sjef</h3>
+                <p><b>Hans Kristian Løkvoll</b></p>
+            </div>
+            <img src="../Media/revystyret2021/hanskristian.jpg" alt="Hans">
+        </div>
+
+        <div>
+            <div class="rolletekst">
+                <h3>Stemningssjef</h3>
+                <p><b>Johnny Ho</b></p>
+            </div>
+            <img src="../Media/revystyret2021/johnny.jpg" alt="Johnny">
+        </div>
+
+    </div>
+
+    <div class="content">
+        <h1>Les mer om Stormrevyen 2021 <a href="../Revyer/skjegget-i-postkassa.html">her</a>!</h1>
     </div>
 
     <footer> <!--Felles footer for alle sider-->
@@ -245,7 +317,7 @@
   // update firestore settings
   db.settings({ timestampsInSnapshots: true});
 </script>
-<script src="Scripts/auth.js"></script>
-<script src="Scripts/index.js"></script>
+<script src="../Scripts/auth.js"></script>
+<script src="../Scripts/index.js"></script>
 
 </html>
