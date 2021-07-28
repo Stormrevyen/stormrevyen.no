@@ -1,5 +1,9 @@
 @import url("https://use.typekit.net/nvi4ogw.css");
 @import url("compass/css3.css");
+$SRbla: #47c2a9;
+$SRrod: #ca3f44;
+$SRorange: #e98051;
+$SRgul: #f7d15a;
 
 html {
   background-color: #e98051;
@@ -20,17 +24,18 @@ html {
     grid-area: 1 / 1 / 2 / 2;
     z-index: -15;
   }
-  #sip2021banner {
+  #forsidebanner {
     position: fixed;
     top: 35vw;
-    background-color: #46378a;
-    color: #fdc300;
+    background-color: $SRrod;
+    color: white;
     width: 100%;
     height: fit-content;
     font-weight: bolder;
     z-index: -15;
     h1 {
       margin: 0;
+      font-size: 2em;
     }
   }
   #dato {
