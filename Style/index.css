@@ -1,11 +1,12 @@
 @charset "UTF-8";
 @import url("https://use.typekit.net/nvi4ogw.css");
-@import url("compass/css3.css");
 html {
   background-color: #e98051;
 }
 
 #forside {
+  position: relative;
+  background: linear-gradient(45deg, #7c1d63 0%, #684595 100%);
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 60vh 20vh 20vh;
@@ -13,33 +14,27 @@ html {
   border-bottom: 1vh solid #f7d15a;
   height: 100%;
   text-align: center;
-  z-index: -16;
+  z-index: -2;
 }
 
 #forside img {
   position: fixed;
-  left: 0;
-  top: -5vw;
-  width: 100%;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-area: 1 / 1 / 2 / 2;
-  z-index: -15;
+  width: 30%;
+  right: 35%;
+  z-index: -1;
+  display: block;
+  margin: auto;
 }
 
 #forside #forsidebanner {
   position: fixed;
   top: 35vw;
-  background-color: #ca3f44;
   color: white;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   font-weight: bolder;
-  z-index: -15;
 }
 
 #forside #forsidebanner h1 {
@@ -149,15 +144,13 @@ html {
   }
 }
 
-/* Pilanimasjon til høyre: */
+/*
+// Pilanimasjon til høyre:
 .scroll-prompt {
-  position: absolute;
-  /* Plasserer nederst til høyre > */
+  position: absolute; 
   bottom: 15%;
   left: 95%;
-  /* < */
   -webkit-transition: opacity 1s ease-out;
-  /* Gjør animasjonen rolig */
   transition: opacity 1s ease-out;
 }
 
@@ -166,7 +159,6 @@ html {
   -webkit-animation: slidedown 2.25s infinite;
   animation: slidedown 2.25s infinite;
 }
-
 .scroll-prompt .scroll-prompt-shape:before,
 .scroll-prompt .scroll-prompt-shape:after {
   content: "";
@@ -177,6 +169,7 @@ html {
   top: 0;
   left: 0;
   background: #fff;
+  -webkit-border-radius: 0;
   border-radius: 0 0.25em 0.25em 0;
   -webkit-transform-origin: bottom left;
   transform-origin: bottom left;
@@ -193,7 +186,6 @@ html {
 }
 
 @-webkit-keyframes slidedown {
-  /* Keyframes til slidedown animasjon:*/
   0% {
     opacity: 0;
   }
@@ -206,6 +198,212 @@ html {
     opacity: 0;
     -webkit-transform: translate(0, 80px);
     transform: translate(0, 80px);
+  }
+}
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.scroll-prompt .scroll-prompt-arrow-container {
+  position: absolute;
+  bottom: 5%;
+  left: 95%;
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.scroll-prompt .scroll-prompt-arrow {
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.scroll-prompt .scroll-prompt-arrow:last-child {
+  animation-direction: reverse;
+  margin-top: -6px;
+}
+
+.scroll-prompt .scroll-prompt-arrow > div {
+  width: 25px;
+  height: 25px;
+  border-right: 2px solid #bebebe;
+  border-bottom: 2px solid #bebebe;
+  -webkit-transform: rotate(45deg) translateZ(5px);
+          transform: rotate(45deg) translateZ(5px);
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  10% {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+  20% {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  30% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  40% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  50% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  60% {
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+  }
+  70% {
+    -webkit-transform: translateY(7px);
+            transform: translateY(7px);
+  }
+  80% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  90% {
+    -webkit-transform: translateY(9px);
+            transform: translateY(9px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  10% {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+  20% {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  30% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  40% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  50% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  60% {
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+  }
+  70% {
+    -webkit-transform: translateY(7px);
+            transform: translateY(7px);
+  }
+  80% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  90% {
+    -webkit-transform: translateY(9px);
+            transform: translateY(9px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
   }
 }
 /*# sourceMappingURL=index.css.map */

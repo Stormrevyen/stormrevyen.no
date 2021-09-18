@@ -114,40 +114,6 @@
         }
     </script>
   
-    <div id="forside"> <!--Stor logo med tekst og knapp over header-->
-        <div id="forside-img"><img src="Media/SR22 Logo.png" alt="Stormrevyen 2022 logo"></div>
-        <div id="forsidebanner"><h1 id="cd22"></h1></div>
-        <!--<div id="dato"><h3>Digitale visninger kommer snart!</h3></div>-->
-        <!--<div><a href="https://stormrevyen.shop/billetter" target="blank">Kjøp billetter</a></div>-->
-        <!--!!Fungerer ikke.<div class="scroll-prompt" id="js_scrollPrompt"><div class="scroll-promp1t-shape"></div></div>-->
-        <div class="scroll-prompt" scroll-prompt="" ng-show="showPrompt" style="opacity: 1;">
-            <div class="scroll-prompt-arrow-container">
-                <div class="scroll-prompt-arrow"><div></div></div>
-                <div class="scroll-prompt-arrow"><div></div></div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        var countDownDate = new Date("Oct 27, 2021 00:00:00").getTime();
-        var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("cd22").innerHTML = `PÅMELDING ÅPNER OM <br> ${days} DAGER, ${hours} TIMER, ${minutes} MINUTTER OG ${seconds} SEKUNDER!`;
-        
-        /*'<string id="countdownN">' + days + '</string>' + " dager, " +'<string id="countdownN">'+hours+'</string>'+" timer, "
-        +'<string id="countdownN">'+minutes+'</string>'+" minutter og "+'<string id="countdownN">'+seconds+'</string>'+" sekunder";*/
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("demo").innerHTML = '<h2>Årets billetter ligger ute for salg!</h2> <a href="billetter.html">Kjøp nå <i class="fas fa-arrow-right"></i></a>';
-        }
-        }, 1000);
-    </script>
-
     <div id="helesiden"> 
         <ul class="account-nav">
             <li class="logged-in"><a onclick="toggle('account')">Konto</a></li>
@@ -196,49 +162,22 @@
         </header>
 
         <!--Javascript, endrer headers bakgrunnsfarge når man scroller: Hvis toppen av siden er mer enn 600px over, endre bakgrunnsfarge på header. -->
-        <!--TODO endre "window.innerHeight" tilbake til "1" dersom alternativ forside skal brukes!-->
         <script>
             window.onscroll = function() {scrollFunction()};
             function scrollFunction() {
                 if (window.innerWidth < 1000){
                     document.getElementById("header").style.backgroundColor = "#E98051";
-                }else if (document.documentElement.scrollTop > window.innerHeight) {
+                }else if (document.documentElement.scrollTop > 10) { 
                 document.getElementById("header").style.backgroundColor = "#E98051";} 
                 else {document.getElementById("header").style.backgroundColor = "unset";}
             }
         </script>
 
-        <!--**Alternativ meny
-        <section class="content bigSec vindmolleBac">
-            <h1>Hei, hva leter du etter?</h1>
-            <ul>
-                <li>Info om påmelding</li>
-                <li>Tidligere revyer</li>
-                <li>Revystyret</li>
-                <li>Om Stormrevyen</li>
-            </ul>
+        <section class="content noBack bigSec">
+            <h1>Oida, her var det tomt dessverre!</h1>
+            <h2>- Prøv en gang til og ha en strålende dag videre;)</h2>
         </section>
 
-        <section class="content noBack topBorderW">
-            <h1>Få med deg det nyeste fra revyen her:</h1>
-        </section>
-    -->
-
-        <!--En slags feed med "opptateringer" fra styret:-->
-        <ul id="feed"></ul>
-        <ul id="feed">
-            <li><div class="content">
-            <h2>Påmeldingen er nå stengt</h2>
-                <h3>Takk til alle som meldte seg på!</h3>
-                <h6>10. Oktober 2020 10:13  -   Anders Garberg</h6>
-            </div></li>
-    
-            <li><div class="content"> 
-                <h2>Påmeldingen er åpen!</h2>
-                <a href="MeldDegPa.html"><h1>Info om påmelding <i class='fas fa-arrow-right'></i></h1></a> 
-                <h6>5. Oktober 2020 08:07  -   Anders Garberg</h6>
-            </div></li>
-        </ul>
     </div> 
 
     <footer> <!--Felles footer for alle sider-->

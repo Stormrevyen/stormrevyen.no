@@ -339,4 +339,12 @@ header.orange {
   margin: 0 1vw;
   padding: 0;
 }
+
+/*// 404.html */
+#404 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2fr 1fr 1fr;
+      grid-template-rows: 2fr 1fr 1fr;
+}
 /*# sourceMappingURL=sider.css.map */

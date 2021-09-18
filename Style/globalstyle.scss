@@ -117,10 +117,11 @@ header {
   padding: 17px 9px;
   @include screen-xs {
     padding: 1vh 1vw;
+    height: 60px;
   }
   position: sticky; /* Fester header til toppen av viewport når man har scrollet ned til den.*/
   top: 0;
-  height: 60px;
+  height: 90px;
   transition: 0.2s;
   z-index: 5; /* Sørger for at header ligger foran alle andre elementer. */
   &:not(.scrollHeader) {
@@ -415,6 +416,7 @@ header {
   margin-block-start: 0;
   margin-block-end: 0;
   padding-inline-start: 0;
+  min-height: 80;
 }
 
 .content {
@@ -470,6 +472,46 @@ header {
     max-width: 100%;
     overflow: hidden;
   }
+}
+
+.noBack {
+  color: white;
+  background: none;
+}
+
+.vindmolleBac {
+  width: 100%;
+  color: white;
+  background: url("../Media/molle.svg");
+  background-repeat: repeat;
+  background-size: 120px auto;
+  background-attachment: fixed;
+}
+
+.bigSec {
+  height: 80vh;
+  display: grid;
+  h1 {
+    font-size: 4em;
+    align-self: flex-end;
+    @include screen-m() {
+      font-size: 2em;
+    }
+  }
+  h2 {
+    color: white;
+    font-size: 2em;
+    margin-left: 2vw;
+    border: none;
+    @include screen-m() {
+      font-size: 1em;
+    }
+  }
+}
+
+.topBorderW {
+  border-top: 4px white solid;
+  border-radius: 0;
 }
 
 h1 {

@@ -1,5 +1,4 @@
 @import url("https://use.typekit.net/nvi4ogw.css");
-@import url("compass/css3.css");
 $SRbla: #47c2a9;
 $SRrod: #ca3f44;
 $SRorange: #e98051;
@@ -10,29 +9,35 @@ html {
 }
 
 #forside {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    rgba(124, 29, 99, 1) 0%,
+    rgba(104, 69, 149, 1) 100%
+  );
   display: grid;
   grid-template-rows: 60vh 20vh 20vh;
   border-bottom: 1vh solid #f7d15a;
   height: 100%;
   text-align: center;
-  z-index: -16;
+  z-index: -2;
   img {
     position: fixed;
-    left: 0;
-    top: -5vw;
-    width: 100%;
-    grid-area: 1 / 1 / 2 / 2;
-    z-index: -15;
+    width: 30%;
+    right: 35%;
+    z-index: -1;
+    display: block;
+    margin: auto;
   }
   #forsidebanner {
     position: fixed;
     top: 35vw;
-    background-color: $SRrod;
+    //background-color: $SRrod;
     color: white;
     width: 100%;
     height: fit-content;
     font-weight: bolder;
-    z-index: -15;
+    //z-index: -15;
     h1 {
       margin: 0;
       font-size: 2em;
@@ -128,12 +133,13 @@ html {
   }
 }
 
-/* Pilanimasjon til høyre: */
+/*
+// Pilanimasjon til høyre:
 .scroll-prompt {
-  position: absolute; /* Plasserer nederst til høyre > */
+  position: absolute; 
   bottom: 15%;
-  left: 95%; /* < */
-  -webkit-transition: opacity 1s ease-out; /* Gjør animasjonen rolig */
+  left: 95%;
+  -webkit-transition: opacity 1s ease-out;
   transition: opacity 1s ease-out;
 }
 
@@ -169,7 +175,6 @@ html {
 }
 
 @-webkit-keyframes slidedown {
-  /* Keyframes til slidedown animasjon:*/
   0% {
     opacity: 0;
   }
@@ -182,5 +187,130 @@ html {
     opacity: 0;
     -webkit-transform: translate(0, 80px);
     transform: translate(0, 80px);
+  }
+}
+*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.scroll-prompt {
+  .scroll-prompt-arrow-container {
+    position: absolute;
+    bottom: 5%;
+    left: 95%;
+    animation-name: bounce;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+  }
+  .scroll-prompt-arrow {
+    animation-name: opacity;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+  }
+  .scroll-prompt-arrow:last-child {
+    animation-direction: reverse;
+    margin-top: -6px;
+  }
+  .scroll-prompt-arrow > div {
+    width: 25px;
+    height: 25px;
+    border-right: 2px solid #bebebe;
+    border-bottom: 2px solid #bebebe;
+    transform: rotate(45deg) translateZ(5px);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  30% {
+    opacity: 0.3;
+  }
+
+  40% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  60% {
+    opacity: 0.6;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  90% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(1px);
+  }
+
+  20% {
+    transform: translateY(2px);
+  }
+
+  30% {
+    transform: translateY(3px);
+  }
+
+  40% {
+    transform: translateY(4px);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  60% {
+    transform: translateY(6px);
+  }
+
+  70% {
+    transform: translateY(7px);
+  }
+
+  80% {
+    transform: translateY(8px);
+  }
+
+  90% {
+    transform: translateY(9px);
+  }
+
+  100% {
+    transform: translateY(10px);
   }
 }
