@@ -111,7 +111,7 @@ header {
   position: sticky;
   /* Fester header til toppen av viewport når man har scrollet ned til den.*/
   top: 0;
-  height: 90px;
+  height: 60px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   z-index: 5;
@@ -121,7 +121,6 @@ header {
 @media screen and (max-width: 570px) {
   header {
     padding: 1vh 1vw;
-    height: 60px;
   }
 }
 

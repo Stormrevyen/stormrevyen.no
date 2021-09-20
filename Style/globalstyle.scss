@@ -117,11 +117,11 @@ header {
   padding: 17px 9px;
   @include screen-xs {
     padding: 1vh 1vw;
-    height: 60px;
+    //!!height: 60px;
   }
   position: sticky; /* Fester header til toppen av viewport når man har scrollet ned til den.*/
   top: 0;
-  height: 90px;
+  height: 60px; //!!Endret fra 90px
   transition: 0.2s;
   z-index: 5; /* Sørger for at header ligger foran alle andre elementer. */
   &:not(.scrollHeader) {

@@ -4,6 +4,10 @@ html {
   background-color: #e98051;
 }
 
+header {
+  height: 90px;
+}
+
 #forside {
   position: relative;
   background: linear-gradient(45deg, #7c1d63 0%, #684595 100%);
