@@ -64,6 +64,9 @@ $SRgul: #f7d15a;
 .revyItem {
   text-align: center;
   width: 400px;
+  @include screen-xs() {
+    width: 90%;
+  }
   margin: 2vw auto;
   border-radius: 12px;
   margin-bottom: 1vh;

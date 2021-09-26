@@ -60,6 +60,12 @@
   /* Gjør knappen over div-elementet synlig ved hover over div-element. */
 }
 
+@media screen and (max-width: 570px) {
+  .revyItem {
+    width: 90%;
+  }
+}
+
 .revyItem:hover {
   -webkit-transform: translate3D(0, -1px, 0) scale(1.03);
           transform: translate3D(0, -1px, 0) scale(1.03);
