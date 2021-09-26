@@ -10,6 +10,9 @@ html {
 
 header {
   height: 90px;
+  @media screen and (max-width: 570px) {
+    height: 60px;
+  }
 }
 
 #forside {

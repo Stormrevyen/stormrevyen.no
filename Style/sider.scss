@@ -278,6 +278,33 @@ header.orange {
   }
 }
 
+#posterGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 27.5% 1fr 1fr;
+  img {
+    &:first-child {
+      margin-bottom: -3.5px;
+    }
+  }
+  @include screen-m() {
+    display: none;
+  }
+}
+
+h1 {
+  @include screen-s() {
+    font-size: 1em;
+  }
+}
+
+h6 {
+  font-size: 1em;
+}
+
+#pameldingsSkjema {
+  display: none;
+}
+
 /*// 404.html */
 #404 {
   display: grid;

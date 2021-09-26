@@ -133,17 +133,16 @@
         var x = setInterval(function() {
         var now = new Date().getTime();
         var distance = countDownDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("cd22").innerHTML = `PÅMELDING ÅPNER OM <br> ${days} DAGER, ${hours} TIMER, ${minutes} MINUTTER OG ${seconds} SEKUNDER!`;
+        document.getElementById("cd22").innerHTML = `PÅMELDING ÅPNER OM <br> ${hours} TIMER, ${minutes} MINUTTER OG ${seconds} SEKUNDER!`;
         
         /*'<string id="countdownN">' + days + '</string>' + " dager, " +'<string id="countdownN">'+hours+'</string>'+" timer, "
         +'<string id="countdownN">'+minutes+'</string>'+" minutter og "+'<string id="countdownN">'+seconds+'</string>'+" sekunder";*/
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("demo").innerHTML = '<h2>Årets billetter ligger ute for salg!</h2> <a href="billetter.html">Kjøp nå <i class="fas fa-arrow-right"></i></a>';
+            document.getElementById("cd22").innerHTML = 'PÅMELDINGEN ER ÅPEN!';
         }
         }, 1000);
     </script>
@@ -180,10 +179,9 @@
             <ul class="toppmeny">
                 <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
                 <!--<li><a href="MeldDegPa.html">Meld deg på!</a></li>-->
-                <li><a href="https://stormrevyen.shop/billetter" target=blank>Kjøp billetter</a></li>
+                <li><a href="pamelding.html">Meld deg på</a></li>
                 <li><a href="revyoversikt.html">Revyoversikt</a></li>
                 <li><a href="revystyret.html">Revystyret</a></li>
-                <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
                 <!--<li class="medlemDropdown">
                     <a class="dropa">For medlemmer<i class="fa fa-caret-down"></i></a>
                     <div class="dropdown-content">
@@ -225,6 +223,7 @@
     -->
 
         <!--En slags feed med "opptateringer" fra styret:-->
+        <!--**Irrellevant info, fjernet midlertidig.
         <ul id="feed"></ul>
         <ul id="feed">
             <li><div class="content">
@@ -239,6 +238,27 @@
                 <h6>5. Oktober 2020 08:07  -   Anders Garberg</h6>
             </div></li>
         </ul>
+    -->
+        
+        <div class="content">
+            <a href="pamelding.html"><h1>Meld deg på Stormrevyen 2022 her! <i class="fas fa-arrow-right"></i></h1></a>
+        </div>
+
+        <div class="content">
+            <h2>Revyfest 1.oktober</h2>
+            <h3>Styret inviterer alle påmeldte til revyfest på Nidaroshuset fredag 1. oktober kl. 19!</h3>
+            <p><b><br>
+            Sted: Nidaroshuset, adr. Peder Østlunds veg 5 <br>
+            Tid: Fredag 1. oktober kl 19 <br>
+            Pris: 130kr</b></p>
+            <p>Det er de 100 første påmeldte som får tilbud om plass på festen. For å få billett må man takke ja på side 4 i <a href="pamelding">påmeldingsskjemaet</a>. Dersom det er plasser igjen vil man motta et oppkrav på vipps i løpet av dagen. Det er først når man har betalt denne at man står på gjestelista. <br>
+                <br>
+            Dersom man ikke mottar oppkrav eller ikke betaler denne innen fristen har man IKKE plass på festen. </p>
+        </div>
+
+
+            
+
     </div> 
 
     <footer> <!--Felles footer for alle sider-->

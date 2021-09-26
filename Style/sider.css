@@ -340,6 +340,37 @@ header.orange {
   padding: 0;
 }
 
+#posterGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 27.5% 1fr 1fr;
+      grid-template-columns: 1fr 1fr 27.5% 1fr 1fr;
+}
+
+#posterGrid img:first-child {
+  margin-bottom: -3.5px;
+}
+
+@media screen and (max-width: 1000px) {
+  #posterGrid {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 1em;
+  }
+}
+
+h6 {
+  font-size: 1em;
+}
+
+#pameldingsSkjema {
+  display: none;
+}
+
 /*// 404.html */
 #404 {
   display: -ms-grid;

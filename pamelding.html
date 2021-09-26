@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/globalstyle.css">
+    <link rel="stylesheet" href="Style/sider.css">
+    <script src="https://kit.fontawesome.com/fd6a2e0274.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="Media/Logo Stormrevyen mølle.svg">
+    <title>Meld deg på! | STORMREVYEN</title>
+</head>
+<body>
+    <!--** POPUPS-->
+    <!--Signin-->
+    <div id="popup-signup" class="popup">
+        <div class="popup-content">
+            <a onclick="toggle('signup')"><i class="fas fa-times"></i></a>
+            <h2>Lag en konto</h2>
+            <form action="" id="signup-form">
+                <input type="email" id="signup-email" placeholder="Epost *" required/>
+                <input type="text" id="signup-displayname" placeholder="Fullt navn *" required>
+                <input type="password" id="signup-password" placeholder="Nytt passord *" required/>
+                <input type="text" id="signup-bio" placeholder="Biografi">
+                <button>Lag ny konto</button>
+                <i>* påkrevd</i>
+            </form>
+        </div>
+    </div>
+
+    <!--Login-->
+    <div id="popup-login" class="popup">
+        <div class="popup-content">
+            <a onclick="toggle('login')"><i class="fas fa-times"></i></a>
+            <h2>Logg på!</h2>
+            <form action="" id="login-form">
+                <input type="email" id="login-email" placeholder="Epost *" required/>
+                <input type="password" id="login-password" placeholder="Passord *" required/>
+                <button>Logg inn</button>
+                <i>* påkrevd</i>
+            </form>
+        </div>
+    </div>
+
+    <!--Acc-->
+    <div id="popup-account" class="popup">
+        <div class="popup-content">
+            <a onclick="toggle('account')"><i class="fas fa-times"></i></a>
+            <h2>Kontodetaljer</h2>
+            <div class="account-details"></div>
+            <button onclick="toggle('message')">Rapporter feil</button>
+        </div>
+    </div>
+
+    <!--Msg-->
+    <div id="popup-message" class="popup">
+        <div class="popup-content">
+            <a onclick="toggle('message')"><i class="fas fa-times"></i></a>
+            <h2>Skriv en medling</h2>
+            <h5>Her kan du skrive en melding til teknisk ansvarlig Anders Garberg dersom det oppstår noen feil eller du har spørsmål.</h5>
+            <form action="" id="message-form">
+                <input type="text" id="message-title" placeholder="Tittel *" required/>
+                <input type="text" id="message-message" class="big" placeholder="Melding *" required>
+                <button>Send melding</button>
+                <i>* påkrevd</i>
+            </form>
+            <i>Svar kommer på epost innen 2-3 virkedager.</i>
+        </div>
+    </div>
+
+    <!--Error-->
+    <div id="popup-error" class="popup">
+        <div class="popup-content">
+            <a onclick="toggle('error')"><i class="fas fa-times"></i></a>
+            <h2>Feilmelding</h2>
+            <p id="error-message"></p>
+        </div>
+    </div>
+    
+    <div class="sidenavcontainer">
+        <a class="mobile sidenavbutton active" onclick="toggleNav()"><i id="sidenavbuttonIcon"class="fas fa-bars"></i></a>
+        <div id="sidenav" class="sidenav">
+            <ul>
+                <li><a href="https://stormrevyen.shop/billetter" target=blank>Kjøp billetter</a></li>
+                <li><a href="revyoversikt.html">Revyoversikt</a></li>
+                <li><a href="revystyret.html">Revystyret</a></li>
+                <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
+                <li>______________</li>
+                <li class="logged-out"><a onclick="toggle('login')">Logg inn</a></li>
+                <li class="logged-out"><a onclick="toggle('signup')">Lag ny konto</a></li>
+                <li class="logged-in"><a onclick="toggle('account')">Min konto</a></li>
+                <li class="logged-in"><a class="logout">Logg ut</a></li>
+                <li class="admin"><a href="laginnlegg.html">Lag innlegg</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var navstate = 0;
+        function toggleNav() {
+            if(navstate == 1){
+                if(window.innerWidth > 700){
+                    document.getElementById("sidenav").style.width = "40%";
+                }else{
+                    document.getElementById("sidenav").style.width = "100%";
+                }
+                document.getElementById("sidenavbuttonIcon").className = "fas fa-times";
+                navstate = 0;
+            }else if(navstate == 0){
+                document.getElementById("sidenav").style.width = "0";
+                document.getElementById("sidenavbuttonIcon").className = "fas fa-bars";
+                navstate = 1;
+            }
+        }
+    </script>
+    
+
+    <div id="helesiden">
+        <ul class="account-nav">
+            <li class="logged-in"><a onclick="toggle('account')">Konto</a></li>
+            <li class="logged-in"><a class="logout">Logg ut</a></li>
+            <li class="admin"><a href="laginnlegg.html">Lag innlegg</a></li>
+            <li class="logged-in left"><a onclick="toggle('account')" id="loginStatus"></a></li>
+            <li class="logged-out"><a onclick="toggle('signup')">Lag konto</a></li>
+            <li class="logged-out"><a onclick="toggle('login')">Logg inn</a></li>
+        </ul>
+        <script>
+            function toggle(item){
+                var popup = document.getElementById(`popup-${item}`);
+                if (popup.style.display === 'block') {
+                    popup.style.display = 'none';
+                } else {
+                    document.getElementById('popup-login').style.display = 'none';
+                    document.getElementById('popup-account').style.display = 'none';
+                    document.getElementById('popup-message').style.display = 'none';
+                    document.getElementById('popup-signup').style.display = 'none';
+                    document.getElementById('popup-error').style.display = 'none';
+                    popup.style.display = 'block';
+                }
+            }
+        </script>
+
+        <!--Felles header for alle sider-->
+        <header id="header">
+        <a href="index.html" id="hovedlogo"><img src='Media/Logo Stormrevyen mølle.svg' height="80" stroke="transparent"></a>
+        <a href="index.html" id="hovedtittel">STORMREVYEN</a>
+        <ul class="toppmeny">
+            <!--class="active" brukes på siden som er aktiv, unntatt hovedsiden.-->
+            <!--<li><a href="MeldDegPa.html">Meld deg på!</a></li>-->
+            <li><a href="https://stormrevyen.shop/billetter" target=blank>Kjøp billetter</a></li>
+            <li><a href="revyoversikt.html">Revyoversikt</a></li>
+            <li><a href="revystyret.html">Revystyret</a></li>
+            <li><a href="https://stormrevyen.shop" target="blank">SR Shop</a></li>
+        </ul>
+    </header>
+
+        <!--Javascript, endrer headers bakgrunnsfarge når man scroller: Hvis toppen av siden er mer enn 600px over, endre bakgrunnsfarge på header.        -->
+        <script>
+            window.onscroll = function() {scrollFunction()};
+           function scrollFunction() {
+           if (document.documentElement.scrollTop > 0) { 
+               document.getElementById("header").style.backgroundColor = "#E98051";} 
+               else {document.getElementById("header").style.backgroundColor = "unset";}
+           }
+       </script>
+
+        <div class="content" id="pameldingStengt"><h1 id="cd22"></h1></div>
+
+        <script>
+            var countDownDate = new Date("Sept 27, 2021 12:00:00").getTime();
+            var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("cd22").innerHTML = `PÅMELDING ÅPNER OM <br> ${hours} TIMER, ${minutes} MINUTTER OG ${seconds} SEKUNDER!`;
+            
+            /*'<string id="countdownN">' + days + '</string>' + " dager, " +'<string id="countdownN">'+hours+'</string>'+" timer, "
+            +'<string id="countdownN">'+minutes+'</string>'+" minutter og "+'<string id="countdownN">'+seconds+'</string>'+" sekunder";*/
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("cd22").innerHTML = 'PÅMELDINGEN ER ÅPEN!';
+                document.getElementById("pameldingsSkjema").style.display = "inline";
+            }
+            }, 1000);
+        </script>
+
+        <div class="content" id="pameldingsSkjema">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSceVyI7GlTgYWhqbVgfY91FcxDwG_m2DYIBSSZFdx12TFcO_Q/viewform?embedded=true" width="640" height="1319" frameborder="0" marginheight="0" marginwidth="0">Laster inn …</iframe>
+            <h6>Trykk <a href="https://forms.gle/nezMGPa5yQexF1DU7">her</a> hvis skjemaet ikke vises.</h6>
+        </div>
+
+        <div class="content noBack" id="posterGrid">          
+            <div id="1">
+                <a onclick="toggle('fatima')"><img src="Media/sr22Plakater/fatima.png" alt="" id="fatima"></a>
+                <a onclick="toggle('emmaIngrid')"><img src="Media/sr22Plakater/emmaIngrid.png" alt="" id="emmaIngrid"></a>
+            </div>
+            <div id="2">
+                <a onclick="toggle('henrikke')"><img src="Media/sr22Plakater/henrkke.png" alt="" id="henrikke"></a>
+                <a onclick="toggle('pete')"><img src="Media/sr22Plakater/pete.png" alt="" id="pete"></a>
+            </div>
+            <div id="3">
+                <a onclick="toggle('mayaStella')"><img src="Media/sr22Plakater/mayaStella.png" alt="" id="mayaStella"></a>
+                <a onclick="toggle('sjefer')"><img src="Media/sr22Plakater/sjefer.png" alt="" id="sjefer"></a>
+            </div>
+            <div id="4">
+                <a onclick="toggle('mina')"><img src="Media/sr22Plakater/mina.png" alt="" id="mina"></a>
+                <a onclick="toggle('renars')"><img src="Media/sr22Plakater/renars.png" alt="" id="renars"></a>
+            </div>
+            <div id="5">
+                <a onclick="toggle('petter')"><img src="Media/sr22Plakater/petter.png" alt="" id="petter"></a>
+                <a onclick="toggle('sivert')"><img src="Media/sr22Plakater/sivert.png" alt="" id="sivert"></a>
+            </div>
+        </div>
+
+        <div id="popup-fatima" class="popup">
+            <div class="popup-content">
+                <a onclick="toggle('fatima')"><i class="fas fa-times"></i></a>
+                <h2>Kostyme- og sminkegruppa</h2>
+                <p>Sminke- og kostymegruppa lager kostymer og sminke til aktørene. Det er de som sørger for at alle som skal på scenen er riktig utkledd og har riktig sminke når de skal på scenen. Fatima er gruppesjef og ønsker DEG i gruppa!</p>
+            </div>
+        </div>
+        <div id="popup-emmaIngrid" class="popup">
+            <div class="popup-content">
+                <a onclick="toggle('emmaIngrid')"><i class="fas fa-times"></i></a>
+                <h2>Tekstgruppa</h2>
+                <p>Tekstgruppa skriver alle sketsjene og låttekstene som framføres under revyen. Alle manusene kommer direkte fra gruppas kreativitet og de spiller en sentral rolle i revyens produksjon. Emma og Ingrid er gruppesjefer og ønsker DEG med i gruppa!</p>
+            </div>
+        </div>
+        <div id="popup-henrikke" class="popup">
+            <div class="popup-content">
+                <a onclick="toggle('henrikke')"><i class="fas fa-times"></i></a>
+                <h2>Skuespillergruppa</h2>
+                <p>Skuespillerne er de som står på scenen under revyen vår. Det er de som spiller sketsjene og synger sangene i forestillingen. Henrikke er gruppesjef og hun ønsker DEG med!</p>
+            </div>
+        </div>
+        <div id="popup-pete" class="popup">
+            <div class="popup-content">
+                <a onclick="toggle('pete')"><i class="fas fa-times"></i></a>
+                <h2>PR-gruppa</h2>
+                <p>PR-gruppa er ansvarlige for å spre revyens budskap. Der er de som promoterer på instagram og facebook, promoterer forestillingene samt lager logo og genser. Petter er gruppesjef og ønsker DEG i gruppa!</p>
+            </div>
+        </div>
+        <div id="popup-mayaStella" class="popup">
+            <div class="popup-content">
+                <a onclick="toggle('mayaStella')"><i class="fas fa-times"></i></a>
+                <h2>Dansegruppa</h2>
+                <p>Danserne er revyens koreografer. De er med på fellesnumrene, noen sketsjer, samt at de har sine egne dansenumre i forestillingen. Maya og Stella er gruppesjefer og ønsker DEG med i gruppa!</p>
+            </div>
+        </div>
+        <div id="popup-sjefer" class="popup">
+            <div class="popup-content">
+                <a onclick="toggle('sjefer')"><i class="fas fa-times"></i></a>
+                <h2>Revysjefene</h2>
+                <p>Revysjefene gjør det administrative i organisasjonen. Anders og Oskar er revysjefer, Amanda er inspisient og Eivind er sekretær.</p>
+            </div>
+        </div>
+        <div id="popup-mina" class="popup">
+            <div class="popup-content">
+                <a onclick="toggle('mina')"><i class="fas fa-times"></i></a>
+                <h2>Stemningsgruppa</h2>
+                <p>Schtæmningsgruppa er ansvarlige for å lage god s! Enten det er å lage mat til de andre gruppene på øvelser, arrangere fester eller lage god stemning så er det deres ansvar. Mina er gruppesjef og ønsker DEG i gruppa!</p>
+            </div>
+        </div>
+        <div id="popup-renars" class="popup">
+            <div class="popup-content">
+                <a onclick="toggle('renars')"><i class="fas fa-times"></i></a>
+                <h2>Bandet</h2>
+                <p>Bandet spiller musikken til revyen. De er med på fellesnumrene, musikalske sketsjer, klappemusikk, samt at de pleier å ha sitt eget nummer i forestillingen. Renars er gruppesjef og ønsker DEG med i bandet!</p>
+            </div>
+        </div>
+        <div id="popup-petter" class="popup">
+            <div class="popup-content">
+                <a onclick="toggle('petter')"><i class="fas fa-times"></i></a>
+                <h2>Lyd og lys</h2>
+                <p>Lyd- og lysgruppa er ansvarlige for alt det tekniske i revyuka. Det er de som sørger for å mikse lyd, koble opp mikrofoner, samt styre lyset under forestillingene. Petter er gruppesjef og ønsker DEG i gruppa!</p>
+            </div>
+        </div>
+        <div id="popup-sivert" class="popup">
+            <div class="popup-content">
+                <a onclick="toggle('sivert')"><i class="fas fa-times"></i></a>
+                <h2>Scenearbeid</h2>
+                <p>Scenegruppa lager kulisser og rekvisitter til revyen. Det er de som lager alt som trengs i sketsjene, samt flytter på kulissene mellom sketsjef på forestillingene. Sivert er gruppesjef og ønsker DEG i gruppa!</p>
+            </div>
+        </div>
+
+        <script>
+            function toggle(item){
+                var popup = document.getElementById(`popup-${item}`);
+                if (popup.style.display === 'block') {
+                    popup.style.display = 'none';
+                } else {
+                    document.getElementById('popup-fatima').style.display = 'none';
+                    document.getElementById('popup-emmaIngrid').style.display = 'none';
+                    document.getElementById('popup-henrikke').style.display = 'none';
+                    document.getElementById('popup-pete').style.display = 'none';
+                    document.getElementById('popup-mayaStella').style.display = 'none';
+                    document.getElementById('popup-sjefer').style.display = 'none';
+                    document.getElementById('popup-mina').style.display = 'none';
+                    document.getElementById('popup-renars').style.display = 'none';
+                    document.getElementById('popup-petter').style.display = 'none';
+                    document.getElementById('popup-sivert').style.display = 'none';
+                    popup.style.display = 'block';
+                }
+            }
+        </script>
+          
+
+        <div class="content">
+            <h2>Disse gruppene kan du melde deg på</h2>
+
+            <h3>Skuespillergruppa</h3>
+            <p>Skuespillerne er de som står på scenen under revyen vår. Det er de som spiller sketsjene og synger sangene i forestillingen. Henrikke er gruppesjef og hun ønsker DEG med!</p>
+
+            <h3>Bandet</h3>
+            <p>Bandet spiller musikken til revyen. De er med på fellesnumrene, musikalske sketsjer, klappemusikk, samt at de pleier å ha sitt eget nummer i forestillingen. Renars er gruppesjef og ønsker DEG med i bandet!</p>
+
+            <h3>Dansegruppa</h3>
+            <p>Danserne er revyens koreografer. De er med på fellesnumrene, noen sketsjer, samt at de har sine egne dansenumre i forestillingen. Maya og Stella er gruppesjefer og ønsker DEG med i gruppa!</p>
+
+            <h3>Tekstgruppa</h3>
+            <p>Tekstgruppa skriver alle sketsjene og låttekstene som framføres under revyen. Alle manusene kommer direkte fra gruppas kreativitet og de spiller en sentral rolle i revyens produksjon. Emma og Ingrid er gruppesjefer og ønsker DEG med i gruppa!</p>
+
+            <h3>Scenearbeidergruppa</h3>
+            <p>Scenegruppa lager kulisser og rekvisitter til revyen. Det er de som lager alt som trengs i sketsjene, samt flytter på kulissene mellom sketsjef på forestillingene. Sivert er gruppesjef og ønsker DEG i gruppa!</p>
+            
+            <h3>Lyd og Lys</h3>
+            <p>Lyd- og lysgruppa er ansvarlige for alt det tekniske i revyuka. Det er de som sørger for å mikse lyd, koble opp mikrofoner, samt styre lyset under forestillingene. Petter er gruppesjef og ønsker DEG i gruppa!</p>
+
+            <h3>Sminke og kostyme</h3>
+            <p>Sminke- og kostymegruppa lager kostymer og sminke til aktørene. Det er de som sørger for at alle som skal på scenen er riktig utkledd og har riktig sminke når de skal på scenen. Fatima er gruppesjef og ønsker DEG i gruppa!</p>
+
+            <h3>PR-gruppa</h3>
+            <p>PR-gruppa er ansvarlige for å spre revyens budskap. Der er de som promoterer på instagram og facebook, promoterer forestillingene samt lager logo og genser. Petter er gruppesjef og ønsker DEG i gruppa!</p>
+
+            <h3>Schtæmningsgruppa</h3>
+            <p>Schtæmningsgruppa er ansvarlige for å lage god s! Enten det er å lage mat til de andre gruppene på øvelser, arrangere fester eller lage god stemning så er det deres ansvar. Mina er gruppesjef og ønsker DEG i gruppa!</p>
+        </div>
+        
+
+    </div>
+
+    <footer> <!--Felles footer for alle sider-->
+        <ul id="footer-left"> <!--Liste med linker til plasser på nettstedet-->
+            <li><a href="#" title="Tilbake til toppen"> <i class='fas fa-arrow-up'></i> Tilbake til toppen</a></li> <!--Href:# for å komme på toppen av siden.-->
+            <li><a  href="MeldDegPa.html">Meld deg på!</a></li>
+            <li><a href="TidligereRevyer.html">Tidligere revyer</a></li>
+            <li><a href="revystyret.html">Revystyret</a></li>
+            <li> ______________</li>
+            <li class="logged-out"><a onclick="toggle('login')">Logg inn</a></li>
+            <li class="logged-out"><a onclick="toggle('signup')">Lag ny konto</a></li>
+            <li class="logged-in"><a onclick="toggle('account')">Min konto</a></li>
+            <li class="logged-in"><a class="logout">Logg ut</a></li>
+            <li class="admin"><a href="laginnlegg.html">Lag innlegg</a></li>
+        </ul>
+        <ul id="footer-right"> <!--Linker til diverse SoMe, javascript importert i head bruker classene under og setter inn ikoner. -->
+            <li><a href="https://www.facebook.com/Stormrevyen/" title="Facebook/Stormrevyen" target="blank"><i class='fab fa-facebook-square'></i> Stormrevyen</a></li>
+            <li><a href="https://www.instagram.com/stormrevyen/" title="Instagram/Stormrevyen" target="blank"><i class='fab fa-instagram'></i> Stormrevyen</a></li>
+            <li><a href="https://www.youtube.com/channel/UCe325iKhB-N4Ze4ipR9s-9g/" title="Youtube/Stormrevyen" target="blank"><i class='fab fa-youtube'></i> Stormrevyen</a></li>
+            <li><a href="mailto:stormrevyen@gmail.com" title="stormrevyen@gmail.com" target="blank"> stormrevyen@gmail.com </a></li>
+        </ul>
+        <div id="byline">© Anders Garberg 2021</div> <!--Nedre del av footer, copyright ol.-->
+    </footer>
+</body>
+
+<!--** FIREBASE og javascript-->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-functions.js"></script>-->
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyCK1DO9SBLds5LbFHpC-fFW3xrVPgwZb3E",
+    authDomain: "stormrevyen-hjemmeside.firebaseapp.com",
+    databaseURL: "https://stormrevyen-hjemmeside-default-rtdb.firebaseio.com",
+    projectId: "stormrevyen-hjemmeside",
+    appId: "1:704944692148:web:8c76fef04244d5030d70e1",
+  };
+  firebase.initializeApp(firebaseConfig);
+  // auth and firestore references
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  //const functions = firebase.functions();
+  // update firestore settings
+  db.settings({ timestampsInSnapshots: true});
+</script>
+<script src="Scripts/auth.js"></script>
+<script src="Scripts/index.js"></script>
+
+</html>

@@ -8,6 +8,12 @@ header {
   height: 90px;
 }
 
+@media screen and (max-width: 570px) {
+  header {
+    height: 60px;
+  }
+}
+
 #forside {
   position: relative;
   background: linear-gradient(45deg, #7c1d63 0%, #684595 100%);

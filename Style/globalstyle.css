@@ -121,6 +121,7 @@ header {
 @media screen and (max-width: 570px) {
   header {
     padding: 1vh 1vw;
+    height: 60px;
   }
 }
 
