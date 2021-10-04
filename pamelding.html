@@ -161,27 +161,12 @@
            }
        </script>
 
-        <div class="content" id="pameldingStengt"><h1 id="cd22"></h1></div>
+       <div class="content">
+           <h2>Påmeldingen er stengt!</h2>
+           <h1>Takk til alle påmeldte, auditionlistene er ute straks!</h1>
+       </div>
 
-        <script>
-            var countDownDate = new Date("Sept 27, 2021 12:00:00").getTime();
-            var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("cd22").innerHTML = `PÅMELDING ÅPNER OM <br> ${minutes} MINUTTER OG ${seconds} SEKUNDER!`;
-            
-            /*'<string id="countdownN">' + days + '</string>' + " dager, " +'<string id="countdownN">'+hours+'</string>'+" timer, "
-            +'<string id="countdownN">'+minutes+'</string>'+" minutter og "+'<string id="countdownN">'+seconds+'</string>'+" sekunder";*/
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("cd22").innerHTML = 'PÅMELDINGEN ER ÅPEN!';
-                document.getElementById("pameldingsSkjema").style.display = "inline";
-            }
-            }, 1000);
-        </script>
+        <div class="content" id="pameldingStengt"><h1 id="cd22">PÅMELDINGEN ER STENGT!</h1></div>
 
         <div class="content" id="pameldingsSkjema">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSceVyI7GlTgYWhqbVgfY91FcxDwG_m2DYIBSSZFdx12TFcO_Q/viewform?embedded=true" width="640" height="1319" frameborder="0" marginheight="0" marginwidth="0">Laster inn …</iframe>

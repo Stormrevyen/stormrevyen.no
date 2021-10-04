@@ -115,7 +115,7 @@
   
     <div id="forside"> <!--Stor logo med tekst og knapp over header-->
         <div id="forside-img"><img src="Media/SR22 Logo.png" alt="Stormrevyen 2022 logo"></div>
-        <div id="forsidebanner"><h1 id="cd22"></h1></div>
+        <div id="forsidebanner"><h1 id="cd22">AUDITIONLISTENE ER STRAKS UTE!</h1></div>
         <!--<div id="dato"><h3>Digitale visninger kommer snart!</h3></div>-->
         <!--<div><a href="https://stormrevyen.shop/billetter" target="blank">Kjøp billetter</a></div>-->
         <!--!!Fungerer ikke.<div class="scroll-prompt" id="js_scrollPrompt"><div class="scroll-promp1t-shape"></div></div>-->
@@ -126,25 +126,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        var countDownDate = new Date("Sept 27, 2021 12:00:00").getTime();
-        var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("cd22").innerHTML = `PÅMELDING ÅPNER OM <br> ${minutes} MINUTTER OG ${seconds} SEKUNDER!`;
-        
-        /*'<string id="countdownN">' + days + '</string>' + " dager, " +'<string id="countdownN">'+hours+'</string>'+" timer, "
-        +'<string id="countdownN">'+minutes+'</string>'+" minutter og "+'<string id="countdownN">'+seconds+'</string>'+" sekunder";*/
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("cd22").innerHTML = 'PÅMELDINGEN ER ÅPEN!';
-        }
-        }, 1000);
-    </script>
 
     <div id="helesiden"> 
         <ul class="account-nav">
@@ -238,6 +219,11 @@
             </div></li>
         </ul>
     -->
+
+        <div class="content">
+            <h2>Påmeldingen er stengt!</h2>
+            <p>Takk til alle påmeldte, auditionlistene kommer ut fortløpende, men dere kan allerede nå sette av onsdag, torsdag og fredag ettermiddag/kveld.</p>
+        </div>
         
         <div class="content">
             <a href="pamelding.html"><h1>Meld deg på Stormrevyen 2022 her! <i class="fas fa-arrow-right"></i></h1></a>
